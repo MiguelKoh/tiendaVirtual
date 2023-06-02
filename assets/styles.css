@@ -1,0 +1,123 @@
+html, body {
+    height: 100%;
+  }
+#contenido{
+transition: margin-left 1s ease-in-out;
+}
+
+#sidebar{
+    padding: 0;
+    /*left: 0px;*/
+    
+    /*transition: width 1s ease-in-out;*/
+
+}
+
+
+#sidebar.active{
+  left:-243px;
+  transition: all 500ms linear;
+}
+
+
+
+#btn-sidebar{
+cursor: pointer;
+border-radius: 4px;
+display: flex;
+justify-content: center;
+align-items: center;
+/*width: 2rem;*/
+padding: .5rem 1rem;
+border: 1px solid white;
+}
+#btn-sidebar:hover{
+ background: rgba(255, 255, 255, 0.2);
+}
+
+
+.relleno{
+    background-color: #1A1C3A;
+}
+.fondo{
+/*background-color:rgba(218, 230, 229, 1);*/
+background-color: #1A1C3A;
+}
+
+.fondoProductos{
+    background-color: #CE850C;
+}
+.fuenteTitulo{
+    font: 400 26px/40px Roboto,Helvetica Neue,sans-serif;
+}
+
+#footer{
+    background-color: #002E5F;
+}
+.fondoSidebar{
+    background-color: #1B2E4F;
+}
+
+#sidebar ul li a{
+  padding-top: 50px;
+  cursor: pointer;
+  color: rgba(500, 500, 500, .9);
+ text-align: center;
+ padding:10px;
+ list-style: none;
+}
+
+#sidebar ul li{
+cursor: pointer;
+color: rgba(500, 500, 500, .9);
+ text-align: center;
+ padding: 15px 10px;
+ border-bottom: 1px solid rgba(100, 100, 100, .3);
+ border-top: 1px solid rgba(100, 100, 100, .3);
+ list-style: none;
+ font-weight: bold;
+}
+#sidebar ul{
+    padding: 0;
+}
+
+#sidebar li:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+   
+}
+
+
+
+    @media (min-width: 992px) { 
+    
+.logoUady {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        /*max-width: 75%;
+        padding-left:30px;
+        padding-right: 30px;
+        padding-top: 20px;
+        padding-bottom: 20px;*/
+    }
+
+
+
+
+
+}
+
+
+@media (min-width: 1200px) { 
+.fixed{
+        position: fixed;
+        width: 243px;
+
+    }
+
+
+
+}
