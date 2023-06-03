@@ -84,63 +84,82 @@ return $productoDeportivo;
 
 
 function obtenerProducto($productoID){
+    
     $cn = ConectaBD();
     if (!$cn) {
       die('Error al conectarse a la base de datos');
     }
+    
+    $producto = array();
+    $precios = array();
+    
     $consultaProducto = "SELECT * FROM productos_almacen WHERE id = " . $productoID . " LIMIT 1";
     
-    $result = mysqli_query($cn, $consultaProducto);
-    if (!$result) {
+    $resultadoProducto = mysqli_query($cn, $consultaProducto);
+    
+    if (!$resultadoProducto) {
       die('Consulta fallida');
     }
-    $producto = array();
-        
-    while ($filaProducto = mysqli_fetch_array($result)) {
-        $tamanos = array();
-        $precios = array();
-        
-        $consultaTamanos = "SELECT * FROM productos_almacen_tamanos
-        WHERE id NOT IN(17,41,42,48,49,53,53,54,66,56) AND idProducto = " . $productoID;;
-        
-        $resultadoTamanos = mysqli_query($cn, $consultaTamanos);
     
-        if ($resultadoTamanos && (mysqli_num_rows($resultadoTamanos) > 0)) {
-            while ($filaTamanos = mysqli_fetch_assoc($resultadoTamanos)){
+    while ($producto = mysqli_fetch_array($resultadoProducto)) {
+        
+        $nombreProducto = $producto['nombre'];
+        $rutaImagenProducto = $producto['rutaImagen'];
+                                
+     }//fin del while
+
+     //Obtener lista de tamaños del producto
+     
+     $consultaTamanos = "SELECT * FROM productos_almacen_tamanos 
+                        WHERE id NOT IN(17,41,42,48,49,53,53,54,66,56) AND idProducto = " . $productoID;
+
+     $resultadoTamanos = mysqli_query($cn, $consultaTamanos);
+
+     while ($filaTamanos = mysqli_fetch_assoc($resultadoTamanos)) {
             
-                if (!in_array($filaTamanos['precio'], $precios)) {
-                    $precios[] = number_format($filaTamanos['precio'], 2);
-                }
+            $tamanos[] = $filaTamanos;
+                                        
+        }//fin del while
     
-                if (!in_array($filaTamanos['tamano'], $tamanos)) {
-                    $tamanos[] = $filaTamanos['tamano'];
-                }
-                
-                
-                $preciosLista = implode(' - ', $precios);
-            
-            }//fin de filaTamanos
+    foreach ($tamanos as $tamano) {
            
-    $producto[] = array(
-                'id' => $filaProducto['id'],
-                'nombre' => $filaProducto['nombre'],
-                'rutaimagen' => $filaProducto['rutaImagen'],
-                'tipo' => $filaProducto['tipo'],
-                'precio'=> $preciosLista,
-                'tallas' => $tamanos
-            );
-            
-    
-    
-        }//fin del if
-    
-        }//fin de while
-    
-    return $producto;
-    
+        if (!in_array($tamano['precio'], $precios)) {
+                $precios[] = number_format($tamano['precio'], 2);
+               
+            }//fin del if
     
 
+    }//fin de foreach
+
+    $preciosLista = implode(' - ', $precios);
+    
+    foreach ($tamanos as $tamano) {
+        
+        $listaTamanos[] = array(
+            'tallas'=> $tamano['tamano'],
+            'idTamanos'=> $tamano['id']
+        );
+  
+  }//fin de foreach
+
+
+     $producto[] = array(
+            'nombre' => $nombreProducto,
+            'rutaimagen' => $rutaImagenProducto,
+            'precio'=> $preciosLista,
+            'tamanos'=> $listaTamanos 
+            );
+    
+   return $producto;
+
 }//fin de funcion
+
+
+
+
+
+
+
 
 
 ?>

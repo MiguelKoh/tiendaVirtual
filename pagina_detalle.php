@@ -35,7 +35,7 @@ $productoID = $_GET["id"];
                     </div>
                     <div class="col-8 px-0">
                         <img src="imagenes/banners/logo-uady-blanco.png" alt="Mountain View"
-                            class="d-none d-xl-block d-lg-block d-md-block img-fluid w-100">
+                            class="d-none d-xl-block d-lg-block d-md-block img-fluid w-75">
                     </div>
                 </div>
                 <ul>
@@ -82,35 +82,43 @@ $productoID = $_GET["id"];
                  <!-- producto aquí -->
                  
                  <?php
-                $producto = obtenerProducto($productoID);
-                $tallas = ''; 
-                //Guardar las tallas 
-                foreach ($producto[0]["tallas"] as $talla) {
-                    $tallas .= '<label class="ml-2"><input type="radio" name="opciones">' . $talla . '</label>';
-                }
-                ?>
-
                 
+                $producto = obtenerProducto($productoID);
+                $tamanos = ''; 
+                
+                //Guardar las tallas 
+                
+                foreach ($producto[0]["tamanos"] as $tamano) {
+
+                    $tamanos .= '<label class="ml-2"><input type="radio" class="talla" name="opciones" value="'.$tamano['idTamanos'].'">' . $tamano['tallas'] . '</label>';
+                
+                }//fin de foreach
+
+                ?>
             
+
                  <div class="d-flex justify-content-center">
                     <div class="row bg-light mx-1 h-75 w-100 mt-5 rounded">
                         <div class="col-lg-3 col-sm-12 d-flex justify-content-center align-items-center">
                             <img class="w-75" src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="Card image cap">
                         </div>
-                        <div class="col-lg-9 col-sm-12 mt-5">
+                        <div class="col-lg-4 col-sm-12 mt-5">
                             <div class="ml-5">
                                 <h5 class="card-title"><?= $producto[0]["nombre"] ?></h5>
                                 <p>Precio:</p>
                                 <p><?= $producto[0]["precio"] ?></p>
                                 <p>Seleccionar cantidad:</p>
                                 <input type="number"  min="0">
-                                <p>Seleccionar Talla:<?= $tallas ?></p>
+                                <p>Seleccionar Talla:<?= $tamanos ?></p>
                                 <div class="mb-5">
                                     <a href="#" class="btn btn-primary">
                                         <i class="fas fa-shopping-cart fa-sm"></i> Agregar al carrito
                                     </a>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-lg-5 d-flex justify-content-start align-items-center" id="medidas">
+                            <!-- imagen de la talla -->
                         </div>
                     </div>
                 </div>      
@@ -120,6 +128,7 @@ $productoID = $_GET["id"];
             </div>
         </div>
     </div>
+  <script src="assets/script.js"></script>
 </body>
 
 </html>

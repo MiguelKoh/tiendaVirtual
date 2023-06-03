@@ -79,33 +79,37 @@ include("funciones.php");
                         <h4 class="text-white my-2 fuenteTitulo" id="titulo">Productos Escolares</h4>
                     </div>
                 </div>
+                 
                  <!-- productos aquí -->
-                                <?php 
+                
+                <?php 
+                    
                     $contador = 0;
                     $productos = obtenerProductoEscolar();
 
                     foreach ($productos as $producto) {
                         $contador++;
-                        if ($contador % 4 == 1) { 
-                ?>
+                        
+                        if ($contador % 4 == 1) { ?>
+                
                             <div class="row mx-3">
-                <?php
-                        }
-                ?>
+                          
+                          <?php } ?>
+
                         <div class="col-lg-3 col-md-4 col-12 mt-5 d-flex justify-content-center"> 
                             <div class="card" style="width: 16rem;">
                                 <div class="d-flex justify-content-center mt-3"><img class="w-50" src="imagenes/productos/<?= $producto["rutaimagen"] ?>" alt="Card image cap"></div>
                                 <div class="card-body">
                                     <a href="pagina_detalle.php?id=<?= $producto["id"]?>"><h5 class="card-title" style="cursor:pointer;"><?= $producto["nombre"] ?></h5></a>
                                     <p class="card-text"><?= $producto["precio"] ?></p>
-                                    <p class="card-text">Tallas:<?= $producto["tallas"] ?></p>
+                                    <p class="card-text">Tallas: <?= $producto["tallas"] ?></p>
                                     <div class="d-flex justify-content-center"><a class="btn btn-primary"><i class="fas fa-shopping-cart fa-sm"></i>  Agregar al carrito</a></div>
                                 </div>
                             </div>
                         </div>
-                <?php
-                        if ($contador % 4 === 0 || $contador === count($productos)) {
-                ?>
+                
+                      <?php  if ($contador % 4 === 0 || $contador === count($productos)) { ?>
+                
                             </div>
                 <?php
                         }
