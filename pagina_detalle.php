@@ -98,7 +98,7 @@ $productoID = $_GET["id"];
             
 
                  <div class="d-flex justify-content-center">
-                    <div class="row bg-light mx-1 h-75 w-100 mt-5 rounded">
+                    <div class="row bg-light h-75 w-80 m-5 rounded">
                         <div class="col-lg-3 col-sm-12 d-flex justify-content-center align-items-center">
                             <img class="w-75" src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="Card image cap">
                         </div>

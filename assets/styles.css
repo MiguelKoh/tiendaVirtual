@@ -88,9 +88,13 @@ color: rgba(500, 500, 500, .9);
    
 }
 
+.w-80{
+    width: 80%;
+}
 
 
-    @media (min-width: 992px) { 
+
+@media (min-width: 992px) { 
     
 .logoUady {
         display: flex;
