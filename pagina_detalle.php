@@ -98,27 +98,36 @@ $productoID = $_GET["id"];
             
 
                  <div class="d-flex justify-content-center">
-                    <div class="row bg-light h-75 w-80 m-5 rounded">
+                    <div class="row bg-light h-75 w-100 m-5 rounded">
                         <div class="col-lg-3 col-sm-12 d-flex justify-content-center align-items-center">
                             <img class="w-75" src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="Card image cap">
                         </div>
-                        <div class="col-lg-4 col-sm-12 mt-5">
+                        <div class="col-lg-4 col-sm-12 mt-5 px-0">
                             <div class="ml-5">
                                 <h5 class="card-title"><?= $producto[0]["nombre"] ?></h5>
                                 <form action="tienda_agregar_carrito.php" method="post">
-                                    <p>Precio:</p>
-                                    <p><?= $producto[0]["precio"] ?></p>
-                                    <p>Seleccionar cantidad:</p>
-                                    <input type="number" name="cantidad" min="0">
-                                    <p>Seleccionar Talla:<?= $tamanos ?></p>
-                                    <div class="mb-5">
-                                        <a href="#" class="btn btn-primary" id="carrito">
-                                            <i class="fas fa-shopping-cart fa-sm"></i> Agregar al carrito
-                                        </a>
-                                        <input class="btn btn-primary" name="enviar" type="submit" value="Agregar a mi carrito">
+                            <div class="product-info">
+                                <div class="title">Precio:</div>
+                                <div class="value"><?= "$ ",$producto[0]["precio"] ?></div>
+                            </div>
+                            
+                                <div class="title mb-3">Seleccionar cantidad:</div>
+                                <div class="value mb-3">
+                                    <input type="number" class="custom-input" name="cantidad" min="0" value="0">
+                                </div>
+                            
+                            <div>
+                                <div class="title">Seleccionar Talla:</div>
+                                <div class="value"><?= $tamanos ?></div>
+                            </div>
+                            <div class="mb-5">
+                                <a href="#" class="btn btn-primary" id="carrito">
+                                    <i class="fas fa-shopping-cart fa-sm"></i> Agregar al carrito
+                                </a>
+                                <input class="btn btn-primary" name="enviar" type="submit" value="Agregar a mi carrito">
+                            </div>
+                        </form>
 
-                                    </div>
-                                </form>
                             </div>
                         </div>
                         <div class="col-lg-5 d-flex justify-content-start align-items-center" id="medidas">
@@ -128,10 +137,10 @@ $productoID = $_GET["id"];
                         
 
                     </div>
-                        <div class="notificacion--active" id="notificacion">
+                        <div class="notificacion" id="notificacion">
                             <p class="notificacion__titulo">Agregado al carrito</p>
-                            <img src="imagenes/productos/DynYeGQeXq.png" alt="" class="notificacion__thumb w-25" />
-                            <a href="#" class="notificacion__link" data-accion="abrir-carrito">Ver carrito</a>
+                                <img src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="" class="notificacion__thumb w-25" />
+                                <a href="#" class="notificacion__link" data-accion="abrir-carrito">Ver carrito</a>
                        </div>
 
 

@@ -12,7 +12,7 @@ const obtenerImagenMedidas = async (id) => {
     const imagenContainer = document.getElementById("medidas"); 
     const rutaImagen = await fetch(`./obtenerImagenMedidas.php?idTamano=${id}`);
     const respuestaRutaImagen = await rutaImagen.json();
-    imagen = `<img class="w-100" src="imagenes/productos/${respuestaRutaImagen[0].rutaImagen}" alt="Card image cap">`
+    imagen = `<img class="w-75" src="imagenes/productos/${respuestaRutaImagen[0].rutaImagen}" alt="Card image cap">`
     /*console.log(imagen);*/
     imagenContainer.innerHTML = imagen;
 
