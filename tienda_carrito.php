@@ -1,20 +1,6 @@
-<?php
+<?php 
 include("funciones.php");
-session_start();
-
-// Verifica si el arreglo 'carrito' no está definido y lo crea si es necesario
-if (!isset($_SESSION['carrito'])) {
-    $_SESSION['carrito'] = array();
-}
-
-$cantidadProductos = 0;
-foreach ($_SESSION['carrito'] as $producto) {
-    $cantidadProductos += $producto['cantidad'];
-}
 ?>
-
-<!-- Resto del código HTML -->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +45,6 @@ foreach ($_SESSION['carrito'] as $producto) {
                             <div>
                                 <span><i class="fas fa-shopping-cart"></i></span>
                                 <span>Mi carrito</span>
-                                <span class="badge badge-pill badge-light"><?= $cantidadProductos ?></span>
                             </div>
                         </div>
                     </li>
@@ -78,6 +63,7 @@ foreach ($_SESSION['carrito'] as $producto) {
 
                 <!-- Fin del contenido del sidebar -->
 
+
             <div class="col-lg-10 col-md-10 col-sm-12" id="contenido">
                 <!-- Contenido principal aquí -->
                 <div class="row">
@@ -88,53 +74,31 @@ foreach ($_SESSION['carrito'] as $producto) {
                              
                 <div class="row fondo">
                     <div class="col-12 d-flex justify-content-center align-items-center fondoProductos">
-                        <h4 class="text-white my-2 fuenteTitulo" id="titulo">Productos Escolares</h4>
+                        <h4 class="text-white my-2 fuenteTitulo" id="titulo">Carrito</h4>
                     </div>
                 </div>
+                 <!-- producto aquí -->
                  
-                 <!-- productos aquí -->
-                
-                <?php 
-                    
-                    $contador = 0;
-                    $productos = obtenerProductoEscolar();
+            
 
-                    foreach ($productos as $producto) {
-                        $contador++;
-                        
-                        if ($contador % 4 == 1) { ?>
-                
-                            <div class="row mx-3">
-                          
-                          <?php } ?>
-
-                        <div class="col-lg-3 col-md-4 col-12 mt-5 d-flex justify-content-center"> 
-                            <div class="card" style="width: 16rem;">
-                                <div class="d-flex justify-content-center mt-3"><img class="w-50" src="imagenes/productos/<?= $producto["rutaimagen"] ?>" alt="Card image cap"></div>
-                                <div class="card-body">
-                                    <a href="pagina_detalle.php?id=<?= $producto["id"]?>"><h5 class="card-title" style="cursor:pointer;"><?= $producto["nombre"] ?></h5></a>
-                                    <p class="card-text"><?= $producto["precio"] ?></p>
-                                    <p class="card-text">Tallas: <?= $producto["tallas"] ?></p>
-                                    <div class="d-flex justify-content-center"><a class="btn btn-primary"><i class="fas fa-shopping-cart fa-sm"></i>  Agregar al carrito</a></div>
-                                </div>
+                 <div class="d-flex justify-content-center">
+                    <div class="row bg-light h-75 w-80 m-5 rounded">
+                        <div class="col-lg-3 col-sm-12 d-flex justify-content-center align-items-center">
+                        </div>
+                        <div class="col-lg-4 col-sm-12 mt-5">
+                            <div class="ml-5">
+                                <p>Precio:</p>
                             </div>
                         </div>
-                
-                      <?php  if ($contador % 4 === 0 || $contador === count($productos)) { ?>
-                
-                            </div>
-                <?php
-                        }
-                    }//fin de foreach
-                ?>
-
-              
-                
-                 <!-- productos aquí -->
+                        </div>
+                    </div>
+                </div>      
+                 <!-- producto aquí -->
 
             </div>
         </div>
     </div>
+  <script src="assets/script.js"></script>
 </body>
 
 </html>

@@ -158,9 +158,5 @@ function obtenerProducto($productoID){
 
 
 
-
-
-
-
 ?>
 

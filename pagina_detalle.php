@@ -17,7 +17,7 @@ $productoID = $_GET["id"];
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Tienda virtual</title>
-    <link rel="shortcut icon" type="image/x-icon" href="imagenes/favicon_uady.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="imagenes/banners/favicon_uady.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-************" crossorigin="anonymous" />
 </head>
@@ -90,7 +90,7 @@ $productoID = $_GET["id"];
                 
                 foreach ($producto[0]["tamanos"] as $tamano) {
 
-                    $tamanos .= '<label class="ml-2"><input type="radio" class="talla" name="opciones" value="'.$tamano['idTamanos'].'">' . $tamano['tallas'] . '</label>';
+                    $tamanos .= '<label class="ml-2"><input type="radio" class="talla" name="id" value="'.$tamano['idTamanos'].'">' . $tamano['tallas'] . '</label>';
                 
                 }//fin de foreach
 
@@ -105,24 +105,37 @@ $productoID = $_GET["id"];
                         <div class="col-lg-4 col-sm-12 mt-5">
                             <div class="ml-5">
                                 <h5 class="card-title"><?= $producto[0]["nombre"] ?></h5>
-                                <p>Precio:</p>
-                                <p><?= $producto[0]["precio"] ?></p>
-                                <p>Seleccionar cantidad:</p>
-                                <input type="number"  min="0">
-                                <p>Seleccionar Talla:<?= $tamanos ?></p>
-                                <div class="mb-5">
-                                    <a href="#" class="btn btn-primary">
-                                        <i class="fas fa-shopping-cart fa-sm"></i> Agregar al carrito
-                                    </a>
-                                </div>
+                                <form action="tienda_agregar_carrito.php" method="post">
+                                    <p>Precio:</p>
+                                    <p><?= $producto[0]["precio"] ?></p>
+                                    <p>Seleccionar cantidad:</p>
+                                    <input type="number" name="cantidad" min="0">
+                                    <p>Seleccionar Talla:<?= $tamanos ?></p>
+                                    <div class="mb-5">
+                                        <a href="#" class="btn btn-primary" id="carrito">
+                                            <i class="fas fa-shopping-cart fa-sm"></i> Agregar al carrito
+                                        </a>
+                                        <input class="btn btn-primary" name="enviar" type="submit" value="Agregar a mi carrito">
+
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <div class="col-lg-5 d-flex justify-content-start align-items-center" id="medidas">
                             <!-- imagen de la talla -->
+
                         </div>
+                        
+
                     </div>
-                </div>      
-            
+                        <div class="notificacion--active" id="notificacion">
+                            <p class="notificacion__titulo">Agregado al carrito</p>
+                            <img src="imagenes/productos/DynYeGQeXq.png" alt="" class="notificacion__thumb w-25" />
+                            <a href="#" class="notificacion__link" data-accion="abrir-carrito">Ver carrito</a>
+                       </div>
+
+
+                </div>
                  <!-- producto aquí -->
 
             </div>
