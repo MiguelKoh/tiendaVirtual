@@ -1,9 +1,10 @@
 
 const btnCarrito = document.getElementById("carrito");
 const notificacion = document.getElementById("notificacion");
-
-
-
+const tallas = document.querySelectorAll('.talla');
+const tamano = document.getElementById("idTamano");
+const btnGuardar = document.getElementById("carrito");
+const cantidad = document.getElementById("cantidad");
 
 const obtenerImagenMedidas = async (id) => {
    
@@ -22,28 +23,54 @@ const obtenerImagenMedidas = async (id) => {
 
 }//fin funcion
 
-  
-  let tallas = document.querySelectorAll('.talla');
-  
-  tallas.forEach((talla) => {
-    
-    talla.addEventListener('click',()=>{
-      obtenerImagenMedidas(talla.value);
-    
-    });
 
- });
+  
+const mostrarMedidas = ()=>{
+  tallas.forEach((talla) => {
+      
+      talla.addEventListener('click',()=>{
+        obtenerImagenMedidas(talla.value);
+      
+      });
+
+   });
+
+}//fin de mostrarMedidas
+
+document.addEventListener("DOMContentLoaded",mostrarMedidas());
+  
+
+
+
+
+
+btnGuardar.addEventListener("click", ()=>{
+ 
+  tallas.forEach((talla)=>{
+    if(talla.checked){
+    console.log(talla.value);
+    }
+    
+  })
+    console.log(cantidad.value);
+
+
+})
+
+
+
+
 
 /*
  
  const enviarDatos = async () => {
   const datos = {
-    nombre: 'Juan',
-    edad: 25,
+    idTamano: 'Juan',
+    cantidad: 25,
   };
 
   try {
-    const respuesta = await fetch('', {
+    const respuesta = await fetch('./tienda_agregar_carrito.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -62,26 +89,17 @@ const obtenerImagenMedidas = async (id) => {
 
 enviarDatos();
 
-
 */
 
+
 btnCarrito.addEventListener("click",()=>{
+
  notificacion.classList.add('notificacion--active');
+
 });
 
  
 
-
-
-
  
-
-
-
-
-
-
-
-
 
 

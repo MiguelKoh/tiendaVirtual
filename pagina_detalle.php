@@ -90,7 +90,8 @@ $productoID = $_GET["id"];
                 
                 foreach ($producto[0]["tamanos"] as $tamano) {
 
-                    $tamanos .= '<label class="ml-2"><input type="radio" class="talla" name="id" value="'.$tamano['idTamanos'].'">' . $tamano['tallas'] . '</label>';
+                    $tamanos .= '<input type="radio" class="talla" name="idTamanos" value="'.$tamano['idTamanos'].'">' . $tamano['tallas'];
+
                 
                 }//fin de foreach
 
@@ -113,7 +114,7 @@ $productoID = $_GET["id"];
                             
                                 <div class="title mb-3">Seleccionar cantidad:</div>
                                 <div class="value mb-3">
-                                    <input type="number" class="custom-input" name="cantidad" min="0" value="0">
+                                    <input type="number" class="custom-input" id="cantidad" min="0" value="0">
                                 </div>
                             
                             <div>
@@ -124,7 +125,7 @@ $productoID = $_GET["id"];
                                 <a href="#" class="btn btn-primary" id="carrito">
                                     <i class="fas fa-shopping-cart fa-sm"></i> Agregar al carrito
                                 </a>
-                                <input class="btn btn-primary" name="enviar" type="submit" value="Agregar a mi carrito">
+                                <input class="btn btn-primary" name="enviar" id="enviar" type="submit" value="Agregar a mi carrito">
                             </div>
                         </form>
 

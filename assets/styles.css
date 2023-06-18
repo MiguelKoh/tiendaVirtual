@@ -92,9 +92,9 @@ font-weight: bold;
 }
 
 .w-80{
+    
     width: 80%;
 }
-
 
 
 @media (min-width: 992px) { 
@@ -132,7 +132,6 @@ font-weight: bold;
 
 /* ----- ----- NOTIFICACIÓN ----- ----- */
 .notificacion {
-    display: block; /* Inicialmente oculto */
     position: fixed;
     bottom: 20px;
     padding: 10px;
@@ -165,7 +164,6 @@ font-weight: bold;
     color: #007bff;
     text-decoration: underline;
 }
-
 
 .custom-input {
   border: 1px solid #ccc;

@@ -12,5 +12,8 @@ function ConectaBD() {
     }
     return $link;
 }
+
+
+
 ?>
 
