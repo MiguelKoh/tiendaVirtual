@@ -10,6 +10,8 @@ if (!isset($_SESSION['carrito'])) {
 $cantidadProductos = 0;
 foreach ($_SESSION['carrito'] as $producto) {
     $cantidadProductos += $producto['cantidad'];
+    print_r($producto);
+    echo "<br>";
 }
 ?>
 

@@ -114,7 +114,7 @@ $productoID = $_GET["id"];
                             
                                 <div class="title mb-3">Seleccionar cantidad:</div>
                                 <div class="value mb-3">
-                                    <input type="number" class="custom-input" id="cantidad" min="0" value="0">
+                                    <input type="number" class="custom-input" name="cantidad" id="cantidad" min="1" value="1">
                                 </div>
                             
                             <div>

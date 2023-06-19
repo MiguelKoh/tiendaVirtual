@@ -3,8 +3,9 @@
 include("conexion.php");
 session_start();
 $cn = ConectaBD();
-$id = isset($_POST['id']) ? $_POST['id'] : "";
+$id = isset($_POST['idTamanos']) ? $_POST['idTamanos'] : "";
 $cantidad = isset($_POST['cantidad']) ? $_POST['cantidad'] : 1;
+$cantidadProductos = 0;
 
 // Verifica que el ID que recibe existe.
 $consultaTamanos = "SELECT nombre, codigoInventario, precio, tamano FROM productos_almacen_tamanos pat
@@ -36,5 +37,8 @@ if (!array_key_exists($id, $_SESSION['carrito'])) {
 } else {
     $_SESSION['carrito'][$id]['cantidad'] += $cantidad;
 }
+foreach ($_SESSION['carrito'] as $producto) {
+    $cantidadProductos += $producto['cantidad'];
+}
+  echo json_decode($cantidadProductos);
 
-header('Location: escolares.php');
