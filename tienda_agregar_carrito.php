@@ -3,7 +3,7 @@
 include("conexion.php");
 session_start();
 $cn = ConectaBD();
-$id = isset($_POST['idTamanos']) ? $_POST['idTamanos'] : "";
+$id = isset($_POST['idTamano']) ? $_POST['idTamano'] : "";
 $cantidad = isset($_POST['cantidad']) ? $_POST['cantidad'] : 1;
 $cantidadProductos = 0;
 
@@ -14,7 +14,8 @@ $consultaTamanos = "SELECT nombre, codigoInventario, precio, tamano FROM product
 $resultadoTamanos = mysqli_query($cn, $consultaTamanos);
 
 if (mysqli_num_rows($resultadoTamanos) <= 0) {
-    echo"no existe el id";
+    echo"no existe el id ",$id;
+    
 }
 
 // Checa si el arreglo de carrito ya ha sido creado.
@@ -40,5 +41,9 @@ if (!array_key_exists($id, $_SESSION['carrito'])) {
 foreach ($_SESSION['carrito'] as $producto) {
     $cantidadProductos += $producto['cantidad'];
 }
-  echo json_decode($cantidadProductos);
+
+$json[]= array(
+    'cantidadTotalCarrito'=> $cantidadProductos
+);
+  echo json_encode($json);
 

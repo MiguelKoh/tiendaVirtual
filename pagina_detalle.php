@@ -106,7 +106,7 @@ $productoID = $_GET["id"];
                         <div class="col-lg-4 col-sm-12 mt-5 px-0">
                             <div class="ml-5">
                                 <h5 class="card-title"><?= $producto[0]["nombre"] ?></h5>
-                                <form action="tienda_agregar_carrito.php" method="post">
+                                <form id="myForm">
                             <div class="product-info">
                                 <div class="title">Precio:</div>
                                 <div class="value"><?= "$ ",$producto[0]["precio"] ?></div>
@@ -114,7 +114,7 @@ $productoID = $_GET["id"];
                             
                                 <div class="title mb-3">Seleccionar cantidad:</div>
                                 <div class="value mb-3">
-                                    <input type="number" class="custom-input" name="cantidad" id="cantidad" min="1" value="1">
+                                    <input type="number" class="custom-input" id="cantidad" min="1" value="0">
                                 </div>
                             
                             <div>
@@ -125,7 +125,8 @@ $productoID = $_GET["id"];
                                 <a href="#" class="btn btn-primary" id="carrito">
                                     <i class="fas fa-shopping-cart fa-sm"></i> Agregar al carrito
                                 </a>
-                                <input class="btn btn-primary" name="enviar" id="enviar" type="submit" value="Agregar a mi carrito">
+                                <input class="btn btn-primary" id="enviar" type="submit" value="Agregar a mi carrito">
+                
                             </div>
                         </form>
 
