@@ -1,7 +1,20 @@
 <?php 
 include("funciones.php");
+session_start();
 $productoID = $_GET["id"];
 //print_r(obtenerProducto($productoID));
+
+// Verifica si el arreglo 'carrito' no está definido y lo crea si es necesario
+if (!isset($_SESSION['carrito'])) {
+    $_SESSION['carrito'] = array();
+}
+
+$cantidadProductos = 0;
+foreach ($_SESSION['carrito'] as $producto) {
+    $cantidadProductos += $producto['cantidad'];
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +38,7 @@ $productoID = $_GET["id"];
 <body class="fondo">
     <div class="container-fluid h-100">
         <div class="row h-100">
-            <div class="col-lg-2 col-md-2 col-sm-12 fondoSidebar h-100" id="sidebar">
+            <div class="col-lg-2 col-md-2 col-sm-12 fondoSidebar h-lg-100 h-sm-50" id="sidebar">
                 <!-- Contenido del sidebar aquí -->
                 <div class="row my-5">
                     <div class="col-4 d-flex justify-content-center align-items-center px-0 ">
@@ -47,6 +60,7 @@ $productoID = $_GET["id"];
                             <div>
                                 <span><i class="fas fa-shopping-cart"></i></span>
                                 <span>Mi carrito</span>
+                                 <span class="badge badge-pill badge-light" id="counter"><?= $cantidadProductos ?></span>
                             </div>
                         </div>
                     </li>
@@ -122,9 +136,6 @@ $productoID = $_GET["id"];
                                 <div class="value"><?= $tamanos ?></div>
                             </div>
                             <div class="mb-5">
-                                <a href="#" class="btn btn-primary" id="carrito">
-                                    <i class="fas fa-shopping-cart fa-sm"></i> Agregar al carrito
-                                </a>
                                 <input class="btn btn-primary" id="enviar" type="submit" value="Agregar a mi carrito">
                 
                             </div>

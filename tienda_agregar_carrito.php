@@ -14,9 +14,15 @@ $consultaTamanos = "SELECT nombre, codigoInventario, precio, tamano FROM product
 $resultadoTamanos = mysqli_query($cn, $consultaTamanos);
 
 if (mysqli_num_rows($resultadoTamanos) <= 0) {
-    echo"no existe el id ",$id;
+    echo"no existe el id ";
     
 }
+
+/*if ((mysqli_num_rows($resultadoTamanos) > 0) {
+    // code...
+}
+*/
+
 
 // Checa si el arreglo de carrito ya ha sido creado.
 if (!isset($_SESSION['carrito'])) {
@@ -38,10 +44,11 @@ if (!array_key_exists($id, $_SESSION['carrito'])) {
 } else {
     $_SESSION['carrito'][$id]['cantidad'] += $cantidad;
 }
+//Calcula la cantidad total de todos los productos en el carrito
 foreach ($_SESSION['carrito'] as $producto) {
     $cantidadProductos += $producto['cantidad'];
 }
-
+// Solo se imprime el total de productos 
 $json[]= array(
     'cantidadTotalCarrito'=> $cantidadProductos
 );

@@ -129,6 +129,17 @@ font-weight: bold;
 
 }
 
+@media (max-width: 575.98px) { 
+.h-sm-75{
+    height: 75%!important;
+}
+.h-sm-50{
+    height: 50%!important;
+}
+}
+
+
+
 
 /* ----- ----- NOTIFICACIÓN ----- ----- */
 .notificacion {
