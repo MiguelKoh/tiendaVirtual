@@ -13,7 +13,7 @@ $consultaTamanos = "SELECT nombre, codigoInventario, precio, tamano FROM product
                          WHERE pat.id = '" . $id . "'";
 $resultadoTamanos = mysqli_query($cn, $consultaTamanos);
 
-if (mysqli_num_rows($resultadoTamanos) > 0) {
+if (mysqli_num_rows($resultadoTamanos) > 0 && $cantidad > 0) {
    
     // Checa si el arreglo de carrito ya ha sido creado.
     if (!isset($_SESSION['carrito'])) {

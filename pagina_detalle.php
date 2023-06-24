@@ -115,7 +115,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                  <div class="d-flex justify-content-center">
                     <div class="row bg-light h-75 w-100 m-5 rounded">
                         <div class="col-lg-3 col-sm-12 d-flex justify-content-center align-items-center">
-                            <img class="w-75" src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="Card image cap">
+                            <img class="w-lg-75 w-sm-50" src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="Card image cap">
                         </div>
                         <div class="col-lg-4 col-sm-12 mt-5 px-0">
                             <div class="ml-5">
@@ -150,15 +150,15 @@ foreach ($_SESSION['carrito'] as $producto) {
                         
 
                     </div>
-                        <div class="notificacion w-13 h-22 row" id="notificacion">
+                        <div class="notificacion w-13 h-25 row" id="notificacion">
                           <div class="col-12">  
                         <p class="notificacion__titulo d-flex justify-content-center">Agregado al carrito</p>
                            </div>
                            <div class="col-12 d-flex justify-content-center">  
-                                <img src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="" class="w-50 h-auto" />
+                                <img src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="" class="w-50 h-auto"/>
                                 </div>
                                 <div class="col-12 d-flex justify-content-center">  
-                                <a href="#" class="notificacion__link mb-1" data-accion="abrir-carrito">Ver carrito</a>
+                                <a href="#" class="notificacion__link mb-2">Ver carrito</a>
                                 </div>
                        </div>
 

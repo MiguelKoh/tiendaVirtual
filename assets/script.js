@@ -64,14 +64,13 @@ const enviarDatos = async (idTamanos, cantidad) => {
 };
 
 
-const disableRbuttons = ()=>{
+const disableRbuttons = ()=> {
    // Obtén todos los elementos de tipo radio con el nombre "opciones"
    const elementosRadio = document.getElementsByName("idTamanos");
    const cantidad = document.getElementById("cantidad");
 
    cantidad.value = 1;
 
-   // Recorre los elementos y establece su propiedad "checked" en falso
      for (let i = 0; i < elementosRadio.length; i++) {
      elementosRadio[i].checked = false;
      
@@ -111,6 +110,7 @@ form.addEventListener('submit', async (event) => {
 
       disableRbuttons()
 
+     
       notificacion.classList.add('notificacion--active');
       
       setTimeout(() => {

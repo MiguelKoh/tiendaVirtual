@@ -136,6 +136,16 @@ font-weight: bold;
 .h-sm-50{
     height: 50%!important;
 }
+
+.w-sm-50{
+    width: 50%!important;
+}
+
+
+}
+
+.w-lg-75{
+    width: 75%;
 }
 
 .w-13{
@@ -145,6 +155,14 @@ font-weight: bold;
 .h-22{
     height: 22%!important;
 }
+.card-body a {
+ color:#000 ;
+}
+
+.card-body a:hover {
+    color:#000 ;
+   }
+
 
 /* ----- ----- NOTIFICACIÓN ----- ----- */
 .notificacion {
@@ -206,3 +224,4 @@ font-weight: bold;
 .value {
     margin-right: 10px;
 }
+
