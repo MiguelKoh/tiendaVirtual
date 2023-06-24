@@ -13,44 +13,45 @@ $consultaTamanos = "SELECT nombre, codigoInventario, precio, tamano FROM product
                          WHERE pat.id = '" . $id . "'";
 $resultadoTamanos = mysqli_query($cn, $consultaTamanos);
 
-if (mysqli_num_rows($resultadoTamanos) <= 0) {
-    echo"no existe el id ";
-    
-}
+if (mysqli_num_rows($resultadoTamanos) > 0) {
+   
+    // Checa si el arreglo de carrito ya ha sido creado.
+    if (!isset($_SESSION['carrito'])) {
+        $_SESSION['carrito'] = array();
+    }
 
-/*if ((mysqli_num_rows($resultadoTamanos) > 0) {
-    // code...
-}
-*/
+    // Checa si el item ya existe en el carrito.
+    if (!array_key_exists($id, $_SESSION['carrito'])) {
+        $fila = mysqli_fetch_array($resultadoTamanos);
+        $item = array(
+            'nombre' => $fila['nombre'],
+            'precio' => number_format($fila['precio'], 2),
+            'tamano' => $fila['tamano'],
+            'codigo' => $fila['codigoInventario'],
+            'cantidad' => $cantidad
+        );
 
-
-// Checa si el arreglo de carrito ya ha sido creado.
-if (!isset($_SESSION['carrito'])) {
-    $_SESSION['carrito'] = array();
-}
-
-// Checa si el item ya existe en el carrito.
-if (!array_key_exists($id, $_SESSION['carrito'])) {
-    $fila = mysqli_fetch_array($resultadoTamanos);
-    $item = array(
-        'nombre' => $fila['nombre'],
-        'precio' => number_format($fila['precio'], 2),
-        'tamano' => $fila['tamano'],
-        'codigo' => $fila['codigoInventario'],
-        'cantidad' => $cantidad
+    $_SESSION['carrito'][$id] = $item;
+    } else {
+        $_SESSION['carrito'][$id]['cantidad'] += $cantidad;
+    }
+    //Calcula la cantidad total de todos los productos en el carrito
+    foreach ($_SESSION['carrito'] as $producto) {
+        $cantidadProductos += $producto['cantidad'];
+    }
+    // Solo se imprime el total de productos 
+    $json[]= array(
+        'cantidadTotalCarrito'=> $cantidadProductos
     );
+    echo json_encode($json);   
+    
+    DesconectaBD($cn);
 
-   $_SESSION['carrito'][$id] = $item;
-} else {
-    $_SESSION['carrito'][$id]['cantidad'] += $cantidad;
-}
-//Calcula la cantidad total de todos los productos en el carrito
-foreach ($_SESSION['carrito'] as $producto) {
-    $cantidadProductos += $producto['cantidad'];
-}
-// Solo se imprime el total de productos 
-$json[]= array(
-    'cantidadTotalCarrito'=> $cantidadProductos
-);
-  echo json_encode($json);
+}//fin del if
+
+
+
+
+
+
 

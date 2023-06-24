@@ -117,7 +117,6 @@ foreach ($_SESSION['carrito'] as $producto) {
                                     <a href="pagina_detalle.php?id=<?= $producto["id"]?>"><h5 class="card-title" style="cursor:pointer;"><?= $producto["nombre"] ?></h5></a>
                                     <p class="card-text"><?= $producto["precio"] ?></p>
                                     <p class="card-text">Tallas: <?= $producto["tallas"] ?></p>
-                                    <div class="d-flex justify-content-center"><a class="btn btn-primary"><i class="fas fa-shopping-cart fa-sm"></i>  Agregar al carrito</a></div>
                                 </div>
                             </div>
                         </div>

@@ -56,8 +56,11 @@ $productos[] = array(
 
     }//fin de while
 
+  DesconectaBD($cn);
+  
+  return $productos;
 
-return $productos;
+
 
 
 }//fin de la funcion
@@ -149,8 +152,11 @@ function obtenerProducto($productoID){
             'precio'=> $preciosLista,
             'tamanos'=> $listaTamanos 
             );
-    
+
+   DesconectaBD($cn);
+   
    return $producto;
+   
 
 }//fin de funcion
 

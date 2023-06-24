@@ -13,6 +13,12 @@ function ConectaBD() {
     return $link;
 }
 
+function DesconectaBD($link) {
+    mysqli_close($link);
+}
+
+
+
 
 
 ?>

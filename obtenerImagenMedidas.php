@@ -26,7 +26,7 @@ $json[]= array(
 
  echo $jsonString;
 
-
+ DesconectaBD($cn);
 
 
 

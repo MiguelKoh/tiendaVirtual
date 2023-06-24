@@ -52,10 +52,8 @@ const enviarDatos = async (idTamanos, cantidad) => {
 
     if (respuesta.ok) {
       const data = await respuesta.json();
-      console.log("respuesta de fetch ", data[0].cantidadTotalCarrito);
-
-      // Hacer más acciones con los datos recibidos
       return data[0].cantidadTotalCarrito; // Indica que los datos se enviaron correctamente
+    
     } else {
       throw new Error('Error en la solicitud. Estado: ' + respuesta.status);
     }
@@ -66,36 +64,59 @@ const enviarDatos = async (idTamanos, cantidad) => {
 };
 
 
+const disableRbuttons = ()=>{
+   // Obtén todos los elementos de tipo radio con el nombre "opciones"
+   const elementosRadio = document.getElementsByName("idTamanos");
+   const cantidad = document.getElementById("cantidad");
+
+   cantidad.value = 1;
+
+   // Recorre los elementos y establece su propiedad "checked" en falso
+     for (let i = 0; i < elementosRadio.length; i++) {
+     elementosRadio[i].checked = false;
+     
+   }
 
 
+}
 
 
 
 const form = document.getElementById('myForm');
-const notificacion = document.getElementById('notificacion'); // Asumiendo que tienes un elemento HTML con el id 'notificacion'
+const notificacion = document.getElementById('notificacion'); 
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault(); // Evita que el formulario se envíe
 
-  // Ejemplo de validación de talla seleccionada
+  // Validación de talla seleccionada
   const tallaSeleccionada = document.querySelector('input[name="idTamanos"]:checked');
   if (!tallaSeleccionada) {
     alert("Debe seleccionar una talla.");
     return;
   }
 
-  // Ejemplo de validación de cantidad ingresada
+  // Validación de cantidad ingresada
   const cantidadValue = parseInt(document.getElementById('cantidad').value);
   if (isNaN(cantidadValue) || cantidadValue < 1) {
-    alert("Debe ingresar una cantidad válida.");
+    alert("Debe ingresar una cantidad válida");
     return;
   }
 
   const datosEnviados = await enviarDatos(tallaSeleccionada.value, cantidadValue);
+ 
   if (datosEnviados) {
-    const counter = document.getElementById("counter");
-    counter.innerHTML = datosEnviados
-    notificacion.classList.add('notificacion--active');
+      const counter = document.getElementById("counter");
+      counter.innerHTML = datosEnviados
+      
+
+      disableRbuttons()
+
+      notificacion.classList.add('notificacion--active');
+      
+      setTimeout(() => {
+        notificacion.classList.remove('notificacion--active');
+      }, 3000);
+  
   }
 });
 
