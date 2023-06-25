@@ -113,13 +113,13 @@ foreach ($_SESSION['carrito'] as $producto) {
             
 
                  <div class="d-flex justify-content-center">
-                    <div class="row bg-light h-75 w-100 m-5 rounded">
+                    <div class="row bg-light h-75 w-80 m-5 rounded">
                         <div class="col-lg-3 col-sm-12 d-flex justify-content-center align-items-center">
                             <img class="w-lg-75 w-sm-50" src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="Card image cap">
                         </div>
                         <div class="col-lg-4 col-sm-12 mt-5 px-0">
                             <div class="ml-5">
-                                <h5 class="mb-4"><?= $producto[0]["nombre"] ?></h5>
+                                <h4 class="mb-4"><?= $producto[0]["nombre"] ?></h4>
                                 <form id="myForm">
                             <div class="product-info">
                                 <div class="font-weight-bold mr-2">Precio:</div>
@@ -133,7 +133,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                             
                             <div>
                                 <div class="font-weight-bold mb-2">Seleccionar Talla:</div>
-                                <div class="value"><?= $tamanos ?></div>
+                                <div class="value mb-2"><?= $tamanos ?></div>
                             </div>
                             <div class="mb-5">
                                 <input class="btn btn-primary" id="enviar" type="submit" value="Agregar a mi carrito">
@@ -143,14 +143,14 @@ foreach ($_SESSION['carrito'] as $producto) {
 
                             </div>
                         </div>
-                        <div class="col-lg-5 d-flex justify-content-start align-items-center" id="medidas">
+                        <div class="col-lg-5 d-flex justify-content-start align-items-center mb-sm-4 justify-content-sm-center" id="medidas">
                             <!-- imagen de la talla -->
 
                         </div>
                         
 
                     </div>
-                        <div class="notificacion w-13 h-25 row notificacion--active" id="notificacion">
+                        <div class="notificacion w-13 h-25 row" id="notificacion">
                           <div class="col-12">  
                         <p class="notificacion__titulo d-flex justify-content-center">Agregado al carrito</p>
                            </div>

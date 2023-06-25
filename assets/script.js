@@ -12,7 +12,7 @@ const obtenerImagenMedidas = async (id) => {
     const imagenContainer = document.getElementById("medidas"); 
     const rutaImagen = await fetch(`./obtenerImagenMedidas.php?idTamano=${id}`);
     const respuestaRutaImagen = await rutaImagen.json();
-    imagen = `<img class="w-75" src="imagenes/productos/${respuestaRutaImagen[0].rutaImagen}" alt="Card image cap">`
+    imagen = `<img class="w-85" src="imagenes/productos/${respuestaRutaImagen[0].rutaImagen}" alt="Card image cap">`
     /*console.log(imagen);*/
     imagenContainer.innerHTML = imagen;
 
@@ -64,59 +64,60 @@ const enviarDatos = async (idTamanos, cantidad) => {
 };
 
 
-const disableRbuttons = ()=> {
-   // Obtén todos los elementos de tipo radio con el nombre "opciones"
-   const elementosRadio = document.getElementsByName("idTamanos");
-   const cantidad = document.getElementById("cantidad");
+const disableRbuttons = () => {
+  // Obtén todos los elementos de tipo radio con el nombre "opciones"
+  const elementosRadio = document.getElementsByName("idTamanos");
+  const cantidad = document.getElementById("cantidad");
 
-   cantidad.value = 1;
+  cantidad.value = 1;
 
-     for (let i = 0; i < elementosRadio.length; i++) {
-     elementosRadio[i].checked = false;
-     
-   }
-
-
-}
+  for (let i = 0; i < elementosRadio.length; i++) {
+    elementosRadio[i].checked = false;
+  }
+};
 
 
 
-const form = document.getElementById('myForm');
-const notificacion = document.getElementById('notificacion'); 
+const form = document.getElementById("myForm");
+const notificacion = document.getElementById("notificacion");
 
-form.addEventListener('submit', async (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault(); // Evita que el formulario se envíe
 
   // Validación de talla seleccionada
-  const tallaSeleccionada = document.querySelector('input[name="idTamanos"]:checked');
+  const tallaSeleccionada = document.querySelector(
+    'input[name="idTamanos"]:checked'
+  );
   if (!tallaSeleccionada) {
-    alert("Debe seleccionar una talla.");
+    alert("Debe seleccionar una talla");
     return;
   }
 
   // Validación de cantidad ingresada
-  const cantidadValue = parseInt(document.getElementById('cantidad').value);
+  const cantidadValue = parseInt(document.getElementById("cantidad").value);
   if (isNaN(cantidadValue) || cantidadValue < 1) {
     alert("Debe ingresar una cantidad válida");
     return;
   }
 
-  const datosEnviados = await enviarDatos(tallaSeleccionada.value, cantidadValue);
- 
+  const datosEnviados = await enviarDatos(
+    tallaSeleccionada.value,
+    cantidadValue
+  );
+
   if (datosEnviados) {
-      const counter = document.getElementById("counter");
-      counter.innerHTML = datosEnviados
-      
+    const counter = document.getElementById("counter");
+    counter.innerHTML = datosEnviados;
 
-      disableRbuttons()
+    disableRbuttons();
 
-     
-      notificacion.classList.add('notificacion--active');
-      
-      setTimeout(() => {
-        notificacion.classList.remove('notificacion--active');
-      }, 3000);
-  
+    notificacion.classList.add("notificacion--active");
+
+    setTimeout(() => {
+      notificacion.classList.remove("notificacion--active");
+    }, 3000);
+
+
   }
 });
 

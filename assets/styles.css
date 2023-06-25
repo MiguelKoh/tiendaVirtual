@@ -95,6 +95,9 @@ font-weight: bold;
     
     width: 80%;
 }
+.w-85{
+    width: 85%;
+}
 
 
 @media (min-width: 992px) { 
@@ -141,8 +144,19 @@ font-weight: bold;
     width: 50%!important;
 }
 
-
+.mb-sm-4{
+margin-bottom: 1.5rem!important; 
 }
+
+.justify-content-sm-center{
+    justify-content: center!important;
+}
+
+
+
+}/*fin media query*/
+
+
 
 .w-lg-75{
     width: 75%;
@@ -162,6 +176,7 @@ font-weight: bold;
 .card-body a:hover {
     color:#000 ;
    }
+
 
 
 /* ----- ----- NOTIFICACIÓN ----- ----- */
