@@ -104,7 +104,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                 
                 foreach ($producto[0]["tamanos"] as $tamano) {
 
-                    $tamanos .= '<input type="radio" class="talla" name="idTamanos" value="'.$tamano['idTamanos'].'">' . $tamano['tallas'];
+                    $tamanos .= '<input type="radio" class="talla" name="idTamanos" value="'.$tamano['idTamanos'].'">'. '<label class="mr-2">'. $tamano['tallas'].'</label>';
 
                 
                 }//fin de foreach
@@ -119,20 +119,20 @@ foreach ($_SESSION['carrito'] as $producto) {
                         </div>
                         <div class="col-lg-4 col-sm-12 mt-5 px-0">
                             <div class="ml-5">
-                                <h5 class="card-title"><?= $producto[0]["nombre"] ?></h5>
+                                <h5 class="mb-4"><?= $producto[0]["nombre"] ?></h5>
                                 <form id="myForm">
                             <div class="product-info">
-                                <div class="title">Precio:</div>
+                                <div class="font-weight-bold mr-2">Precio:</div>
                                 <div class="value"><?= "$ ",$producto[0]["precio"] ?></div>
                             </div>
-                            
-                                <div class="title mb-3">Seleccionar cantidad:</div>
-                                <div class="value mb-3">
+                                <div class="value mb-3 d-flex align-items-center">
+                                <p class="mb-0 d-flex font-weight-bold mr-2">Cantidad:</p>
+                               
                                     <input type="number" class="custom-input" id="cantidad" min="1" value="1">
                                 </div>
                             
                             <div>
-                                <div class="title">Seleccionar Talla:</div>
+                                <div class="font-weight-bold mb-2">Seleccionar Talla:</div>
                                 <div class="value"><?= $tamanos ?></div>
                             </div>
                             <div class="mb-5">
@@ -150,7 +150,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                         
 
                     </div>
-                        <div class="notificacion w-13 h-25 row" id="notificacion">
+                        <div class="notificacion w-13 h-25 row notificacion--active" id="notificacion">
                           <div class="col-12">  
                         <p class="notificacion__titulo d-flex justify-content-center">Agregado al carrito</p>
                            </div>
