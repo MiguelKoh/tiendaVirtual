@@ -28,8 +28,7 @@ foreach ($_SESSION['carrito'] as $producto) {
 
     <link rel="stylesheet" href="assets/styles.css" type="text/css" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
     <title>Tienda virtual</title>
     <link rel="shortcut icon" type="image/x-icon" href="imagenes/banners/favicon_uady.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
@@ -57,7 +56,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                 <a href="escolares.php"><li>Escolares</li></a>
                 <a href="deportivos.php"><li>Deportivos</li></a>
                     
-                    <a href="tienda_carrito.php" class="link">
+                <a href="tienda_carrito.php" class="link">
                     <li>
                         <div>
                            

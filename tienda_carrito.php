@@ -13,6 +13,7 @@ foreach ($_SESSION['carrito'] as $producto) {
     //print_r($producto);
     //echo "<br>";
 }
+print_r($_SESSION['carrito']);
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +26,7 @@ foreach ($_SESSION['carrito'] as $producto) {
 
     <link rel="stylesheet" href="assets/styles.css" type="text/css" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
     <title>Tienda virtual</title>
     <link rel="shortcut icon" type="image/x-icon" href="imagenes/banners/favicon_uady.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
@@ -98,14 +98,46 @@ foreach ($_SESSION['carrito'] as $producto) {
             
 
                  <div class="d-flex justify-content-center">
-                    <div class="row bg-light h-75 w-80 m-5 rounded">
-                        <div class="col-lg-3 col-sm-12 d-flex justify-content-center align-items-center">
+                    <div class="row h-75 w-80 m-5 rounded">
+                        <div class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center">
+                        <?php
+                        
+                        if (count($_SESSION['carrito']) > 0) {?>
+
+                        <table class="table bg-light">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">Producto</th>
+                              <th scope="col">Precio</th>
+                              <th scope="col">Cantidad</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                         <?php
+                         $precioTotal = number_format(0, 2); 
+                         foreach ($_SESSION['carrito'] as $producto) { 
+                            $precioTotalProducto = $producto['precio'] * $producto['cantidad'];
+                                                        $precioTotal += $precioTotalProducto;
+                            ?>
+                            <tr>
+                              <td><?=  $producto['nombre']?><p>Talla: <?= $producto['tamano'] ?></p></td>
+                              <td>$<?= number_format($precioTotalProducto, 2) ?></td>
+                              <td><?=  $producto['cantidad'] ?></td>
+                            </tr>
+                           <?php } ?> 
+                            <tr>
+                            <td><p class="font-weight-bold">Total</p></td>
+                            <td><p class="text-info font-weight-bold">$<?=$precioTotal?></p></td>
+                            </tr>
+                          </tbody>
+                        
+                        </table>
+                        <?php } else{ ?>
+                           <p class="font-weight-bold">Carrito vacio</p>
+                        <?php }  ?>
+                            
                         </div>
-                        <div class="col-lg-4 col-sm-12 mt-5">
-                            <div class="ml-5">
-                                <p>Precio:</p>
-                            </div>
-                        </div>
+                        
                         </div>
                     </div>
                 </div>      

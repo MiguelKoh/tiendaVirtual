@@ -12,7 +12,7 @@ const obtenerImagenMedidas = async (id) => {
     const imagenContainer = document.getElementById("medidas"); 
     const rutaImagen = await fetch(`./obtenerImagenMedidas.php?idTamano=${id}`);
     const respuestaRutaImagen = await rutaImagen.json();
-    imagen = `<img class="w-85" src="imagenes/productos/${respuestaRutaImagen[0].rutaImagen}" alt="Card image cap">`
+    imagen = `<img class="w-85" src="imagenes/productos/${respuestaRutaImagen[0].rutaImagen}" alt="Talla no disponible">`
     /*console.log(imagen);*/
     imagenContainer.innerHTML = imagen;
 
@@ -64,12 +64,12 @@ const enviarDatos = async (idTamanos, cantidad) => {
 };
 
 
-const disableRbuttons = () => {
+const resetFields = () => {
   // Obtén todos los elementos de tipo radio con el nombre "opciones"
   const elementosRadio = document.getElementsByName("idTamanos");
   const cantidad = document.getElementById("cantidad");
 
-  cantidad.value = 0;
+  cantidad.value = 1;
 
   for (let i = 0; i < elementosRadio.length; i++) {
     elementosRadio[i].checked = false;
@@ -109,13 +109,13 @@ form.addEventListener("submit", async (event) => {
     const counter = document.getElementById("counter");
     counter.innerHTML = datosEnviados;
 
-    disableRbuttons();
+    resetFields();
   
     notificacion.classList.add("notificacion--active");
 
     setTimeout(() => {
       notificacion.classList.remove("notificacion--active");
-    }, 3000);
+    }, 4000);
 
 
   }

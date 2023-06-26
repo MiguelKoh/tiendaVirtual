@@ -27,8 +27,7 @@ foreach ($_SESSION['carrito'] as $producto) {
 
     <link rel="stylesheet" href="assets/styles.css" type="text/css" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
     <title>Tienda virtual</title>
     <link rel="shortcut icon" type="image/x-icon" href="imagenes/banners/favicon_uady.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
@@ -112,7 +111,12 @@ foreach ($_SESSION['carrito'] as $producto) {
                 
                 foreach ($producto[0]["tamanos"] as $tamano) {
 
-                    $tamanos .= '<input type="radio" class="talla" name="idTamanos" value="'.$tamano['idTamanos'].'">'. '<label class="mr-2">'. $tamano['tallas'].'</label>';
+                    $tamanos .= '<label class="mr-2 pointer">
+                                
+                                <input type="radio" class="talla" name="idTamanos" 
+                                value="'.$tamano['idTamanos'].'">'.$tamano['tallas'].'
+                                
+                                </label>';
 
                 
                 }//fin de foreach
@@ -136,7 +140,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                                 <div class="value mb-3 d-flex align-items-center">
                                 <p class="mb-0 d-flex font-weight-bold mr-2">Cantidad:</p>
                                
-                                    <input type="number" class="custom-input" id="cantidad" min="1" value="0">
+                                    <input type="number" class="custom-input" id="cantidad" min="1" value="1">
                                 </div>
                             
                             <div>
@@ -166,7 +170,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                                 <img src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="" class="w-50 h-auto"/>
                                 </div>
                                 <div class="col-12 d-flex justify-content-center">  
-                                <a href="#" class="notificacion__link mb-2">Ver carrito</a>
+                                <a href="tienda_carrito.php" class="notificacion__link mb-2">Ver carrito</a>
                                 </div>
                        </div>
 
