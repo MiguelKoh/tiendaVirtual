@@ -56,15 +56,24 @@ foreach ($_SESSION['carrito'] as $producto) {
                 
                 <a href="escolares.php"><li>Escolares</li></a>
                 <a href="deportivos.php"><li>Deportivos</li></a>
+                    
+                    <a href="tienda_carrito.php" class="link">
                     <li>
                         <div>
-                            <div>
-                                <span><i class="fas fa-shopping-cart"></i></span>
-                                <span>Mi carrito</span>
-                                <span class="badge badge-pill badge-light" id="counter"><?= $cantidadProductos ?></span>
-                            </div>
+                           
+                           <div>
+                            
+                            <span><i class="fas fa-shopping-cart"></i></span>
+                            <span>Mi carrito</span>
+                            <span class="badge badge-pill badge-light" id="counter"><?= $cantidadProductos?></span>
+                          
+                          </div>
+                        
                         </div>
                     </li>
+                </a>
+                    
+
                     <li>
                         <div>
                             <div>

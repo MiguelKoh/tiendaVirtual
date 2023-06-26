@@ -1,5 +1,18 @@
-<?php 
+<?php
 include("funciones.php");
+session_start();
+
+// Verifica si el arreglo 'carrito' no está definido y lo crea si es necesario
+if (!isset($_SESSION['carrito'])) {
+    $_SESSION['carrito'] = array();
+}
+
+$cantidadProductos = 0;
+foreach ($_SESSION['carrito'] as $producto) {
+    $cantidadProductos += $producto['cantidad'];
+    //print_r($producto);
+    //echo "<br>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -40,14 +53,17 @@ include("funciones.php");
                 
                 <a href="escolares.php"><li>Escolares</li></a>
                 <a href="deportivos.php"><li>Deportivos</li></a>
+                <a href="tienda_carrito.php" class="link">
                     <li>
                         <div>
-                            <div>
-                                <span><i class="fas fa-shopping-cart"></i></span>
-                                <span>Mi carrito</span>
-                            </div>
+                           <div>
+                            <span><i class="fas fa-shopping-cart"></i></span>
+                            <span>Mi carrito</span>
+                            <span class="badge badge-pill badge-light" id="counter"><?= $cantidadProductos?></span>
+                          </div>
                         </div>
                     </li>
+                </a>
                     <li>
                         <div>
                             <div>

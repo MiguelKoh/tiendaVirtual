@@ -69,7 +69,7 @@ const disableRbuttons = () => {
   const elementosRadio = document.getElementsByName("idTamanos");
   const cantidad = document.getElementById("cantidad");
 
-  cantidad.value = 1;
+  cantidad.value = 0;
 
   for (let i = 0; i < elementosRadio.length; i++) {
     elementosRadio[i].checked = false;
@@ -110,7 +110,7 @@ form.addEventListener("submit", async (event) => {
     counter.innerHTML = datosEnviados;
 
     disableRbuttons();
-
+  
     notificacion.classList.add("notificacion--active");
 
     setTimeout(() => {

@@ -55,15 +55,23 @@ foreach ($_SESSION['carrito'] as $producto) {
                 
                 <a href="escolares.php"><li>Escolares</li></a>
                 <a href="deportivos.php"><li>Deportivos</li></a>
+                
+                <a href="tienda_carrito.php" class="link">
                     <li>
                         <div>
-                            <div>
-                                <span><i class="fas fa-shopping-cart"></i></span>
-                                <span>Mi carrito</span>
-                                 <span class="badge badge-pill badge-light" id="counter"><?= $cantidadProductos ?></span>
-                            </div>
+                           
+                           <div>
+                            
+                            <span><i class="fas fa-shopping-cart"></i></span>
+                            <span>Mi carrito</span>
+                            <span class="badge badge-pill badge-light" id="counter"><?= $cantidadProductos?></span>
+                          
+                          </div>
+                        
                         </div>
                     </li>
+                </a>
+
                     <li>
                         <div>
                             <div>
@@ -115,7 +123,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                  <div class="d-flex justify-content-center">
                     <div class="row bg-light h-75 w-80 m-5 rounded">
                         <div class="col-lg-3 col-sm-12 d-flex justify-content-center align-items-center">
-                            <img class="w-lg-75 w-sm-50" src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="Card image cap">
+                            <img class="w-lg-75 w-sm-50 mt-sm-5-c" src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="Card image cap">
                         </div>
                         <div class="col-lg-4 col-sm-12 mt-5 px-0">
                             <div class="ml-5">
@@ -128,7 +136,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                                 <div class="value mb-3 d-flex align-items-center">
                                 <p class="mb-0 d-flex font-weight-bold mr-2">Cantidad:</p>
                                
-                                    <input type="number" class="custom-input" id="cantidad" min="1" value="1">
+                                    <input type="number" class="custom-input" id="cantidad" min="1" value="0">
                                 </div>
                             
                             <div>
@@ -143,14 +151,14 @@ foreach ($_SESSION['carrito'] as $producto) {
 
                             </div>
                         </div>
-                        <div class="col-lg-5 d-flex justify-content-start align-items-center mb-sm-4 justify-content-sm-center" id="medidas">
+                        <div class="col-lg-5 d-flex justify-content-lg-start align-items-center mb-sm-4-custom justify-content-sm-center" id="medidas">
                             <!-- imagen de la talla -->
 
                         </div>
                         
 
                     </div>
-                        <div class="notificacion w-13 h-25 row" id="notificacion">
+                        <div class="notificacion w-13 h-25 row w-sm-35" id="notificacion">
                           <div class="col-12">  
                         <p class="notificacion__titulo d-flex justify-content-center">Agregado al carrito</p>
                            </div>
