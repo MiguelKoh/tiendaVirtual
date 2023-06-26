@@ -8,9 +8,9 @@ $cantidad = isset($_POST['cantidad']) ? $_POST['cantidad'] : 1;
 $cantidadProductos = 0;
 
 // Verifica que el ID que recibe existe.
-$consultaTamanos = "SELECT nombre, codigoInventario, precio, tamano FROM productos_almacen_tamanos pat
-                         INNER JOIN productos_almacen pa ON pat.idProducto = pa.id
-                         WHERE pat.id = '" . $id . "'";
+$consultaTamanos = "SELECT nombre, codigoInventario, precio, tamano, pa.rutaImagen FROM productos_almacen_tamanos pat
+INNER JOIN productos_almacen pa ON pat.idProducto = pa.id
+WHERE pat.id = '" . $id . "'";
 $resultadoTamanos = mysqli_query($cn, $consultaTamanos);
 
 if (mysqli_num_rows($resultadoTamanos) > 0 && $cantidad > 0) {
@@ -28,10 +28,12 @@ if (mysqli_num_rows($resultadoTamanos) > 0 && $cantidad > 0) {
             'precio' => number_format($fila['precio'], 2),
             'tamano' => $fila['tamano'],
             'codigo' => $fila['codigoInventario'],
-            'cantidad' => $cantidad
+            'cantidad' => $cantidad,
+            'rutaImagen' => $fila['rutaImagen']
         );
-
-    $_SESSION['carrito'][$id] = $item;
+        
+        $_SESSION['carrito'][$id] = $item;
+        
     } else {
         $_SESSION['carrito'][$id]['cantidad'] += $cantidad;
     }

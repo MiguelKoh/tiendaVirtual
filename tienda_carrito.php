@@ -108,6 +108,7 @@ print_r($_SESSION['carrito']);
                           <thead class="thead-dark">
                             <tr>
                               <th scope="col">Producto</th>
+                              <th scope="col"></th>
                               <th scope="col">Precio</th>
                               <th scope="col">Cantidad</th>
                             </tr>
@@ -121,12 +122,14 @@ print_r($_SESSION['carrito']);
                             ?>
                             <tr>
                               <td><?=  $producto['nombre']?><p>Talla: <?= $producto['tamano'] ?></p></td>
+                              <td><img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-25" alt=""></td>
                               <td>$<?= number_format($precioTotalProducto, 2) ?></td>
                               <td><?=  $producto['cantidad'] ?></td>
                             </tr>
                            <?php } ?> 
                             <tr>
                             <td><p class="font-weight-bold">Total</p></td>
+                            <td></td>
                             <td><p class="text-info font-weight-bold">$<?=$precioTotal?></p></td>
                             </tr>
                           </tbody>
