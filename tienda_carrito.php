@@ -31,6 +31,7 @@ foreach ($_SESSION['carrito'] as $producto) {
     <link rel="shortcut icon" type="image/x-icon" href="imagenes/banners/favicon_uady.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-************" crossorigin="anonymous" />
+
 </head>
 
 <body class="fondo">
@@ -123,10 +124,24 @@ foreach ($_SESSION['carrito'] as $producto) {
                                                         $precioTotal += $precioTotalProducto;
                             ?>
                             <tr id="<?=$id?>">
-                              <td class="col-4"><?=  $producto['nombre']?><p>Talla: <?= $producto['tamano'] ?></p></td>
-                              <td class="col-2"><img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-50" alt=""></td>
+                              <td class="col-4"><?=  $producto['nombre']?>
+                                 <p>Talla: <?= $producto['tamano'] ?></p>
+                                 <a class="delete-item" href="#">Eliminar</a>
+                              </td>
+                              
+                              <td class="col-2">
+                                  <img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-50" alt=""></td>
                               <td class="col-3">$<?= number_format($precioTotalProducto, 2) ?></td>
-                              <td class="col-3"> <?=  $producto['cantidad'] ?></td>
+                              
+                              <td class="col-3">
+                                <div class="row">
+                                    <div class="col">
+                                      <input type="number" class="custom-input" name="cantidad" min="1" max="100" value="<?=$producto['cantidad']?>">
+                                    </div>
+                                </div>
+                              </td>
+                            
+
                             </tr>
                            <?php } ?> 
                             <tr>
@@ -163,7 +178,10 @@ foreach ($_SESSION['carrito'] as $producto) {
             </div>
         </div>
     </div>
-  <script src="assets/script.js"></script>
+
+  <script src="assets/jquery-3.1.1.min.js"></script>
+  <script src="assets/carrito.js"></script>
+
 </body>
 
 </html>
