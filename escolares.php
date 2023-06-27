@@ -37,7 +37,7 @@ foreach ($_SESSION['carrito'] as $producto) {
 
 <body class="fondo">
     <div class="container-fluid h-100">
-        <div class="row h-100">
+        <div class="row">
             <div class="col-lg-2 col-md-2 col-sm-12 fondoSidebar h-lg-100 h-sm-50" id="sidebar">
                 <!-- Contenido del sidebar aquí -->
                 <div class="row my-5">

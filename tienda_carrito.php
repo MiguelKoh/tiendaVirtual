@@ -13,7 +13,7 @@ foreach ($_SESSION['carrito'] as $producto) {
     //print_r($producto);
     //echo "<br>";
 }
-print_r($_SESSION['carrito']);
+//print_r($_SESSION['carrito']);
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +36,7 @@ print_r($_SESSION['carrito']);
 <body class="fondo">
     <div class="container-fluid h-100">
         <div class="row h-100">
-            <div class="col-lg-2 col-md-2 col-sm-12 fondoSidebar h-100" id="sidebar">
+            <div class="col-lg-2 col-md-2 col-sm-12 fondoSidebar" id="sidebar">
                 <!-- Contenido del sidebar aquí -->
                 <div class="row my-5">
                     <div class="col-4 d-flex justify-content-center align-items-center px-0 ">
@@ -98,11 +98,13 @@ print_r($_SESSION['carrito']);
             
 
                  <div class="d-flex justify-content-center">
+               
+                <?php if (count($_SESSION['carrito']) > 0) {?>    
+                    
                     <div class="row h-75 w-80 m-5 rounded">
                         <div class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center">
-                        <?php
                         
-                        if (count($_SESSION['carrito']) > 0) {?>
+                        
 
                         <table class="table bg-light">
                           <thead class="thead-dark">
@@ -116,32 +118,44 @@ print_r($_SESSION['carrito']);
                           <tbody>
                          <?php
                          $precioTotal = number_format(0, 2); 
-                         foreach ($_SESSION['carrito'] as $producto) { 
+                         foreach ($_SESSION['carrito'] as $id => $producto) { 
                             $precioTotalProducto = $producto['precio'] * $producto['cantidad'];
                                                         $precioTotal += $precioTotalProducto;
                             ?>
-                            <tr>
-                              <td><?=  $producto['nombre']?><p>Talla: <?= $producto['tamano'] ?></p></td>
-                              <td><img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-25" alt=""></td>
-                              <td>$<?= number_format($precioTotalProducto, 2) ?></td>
-                              <td><?=  $producto['cantidad'] ?></td>
+                            <tr id="<?=$id?>">
+                              <td class="col-4"><?=  $producto['nombre']?><p>Talla: <?= $producto['tamano'] ?></p></td>
+                              <td class="col-2"><img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-50" alt=""></td>
+                              <td class="col-3">$<?= number_format($precioTotalProducto, 2) ?></td>
+                              <td class="col-3"> <?=  $producto['cantidad'] ?></td>
                             </tr>
                            <?php } ?> 
                             <tr>
-                            <td><p class="font-weight-bold">Total</p></td>
-                            <td></td>
-                            <td><p class="text-info font-weight-bold">$<?=$precioTotal?></p></td>
+                             <td><p class="font-weight-bold">Total</p></td>
+                             <td></td>
+                             <td><p class="text-info font-weight-bold">$<?=$precioTotal?></p></td>
                             </tr>
+                          
                           </tbody>
                         
                         </table>
-                        <?php } else{ ?>
-                           <p class="font-weight-bold">Carrito vacio</p>
-                        <?php }  ?>
-                            
+        
                         </div>
                         
                         </div>
+                    
+                    <?php } 
+
+                    else { ?>
+
+                     <div class="row h-75 w-80 m-5 rounded bg-light">
+                         <div class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center">
+                             <p class="m-4">Carrito vacio</p>
+                         </div>
+                     </div>
+
+
+                     <?php }  ?>
+
                     </div>
                 </div>      
                  <!-- producto aquí -->
