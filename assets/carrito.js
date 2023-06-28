@@ -36,7 +36,7 @@ function bindQuantityInputChangeListener(quantityInput) {
             event.preventDefault();
             var parentTR = $(this).closest('tr');
             $.ajax({
-                url: 'tienda_eliminar_producto.php',
+                url: './tienda_eliminar_producto.php',
                 method: 'post',
                 data: {id: parentTR.attr('id')},
                 success: function (result) {

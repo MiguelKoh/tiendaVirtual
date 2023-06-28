@@ -97,15 +97,14 @@ foreach ($_SESSION['carrito'] as $producto) {
                  <!-- producto aquí -->
                  
             
-
-                 <div class="d-flex justify-content-center">
-               
-                <?php if (count($_SESSION['carrito']) > 0) {?>    
+             
+                 
+                <div class="d-flex justify-content-center">
                     
                     <div class="row h-75 w-80 m-5 rounded">
-                        <div class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center">
+                        <div id="panel-productos" class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center bg-light px-0">
                         
-                        
+                    <?php if (count($_SESSION['carrito']) > 0) {?>    
 
                         <table class="table bg-light">
                           <thead class="thead-dark">
@@ -147,28 +146,26 @@ foreach ($_SESSION['carrito'] as $producto) {
                             <tr>
                              <td><p class="font-weight-bold">Total</p></td>
                              <td></td>
-                             <td><p class="text-info font-weight-bold">$<?=$precioTotal?></p></td>
+                             <td><p class="text-info font-weight-bold" id="total">$<?=$precioTotal?></p></td>
                             </tr>
                           
                           </tbody>
                         
                         </table>
-        
+                     
+                        <?php } else {?>
+                        
+                        <p class="m-4">Carrito vacio</p>
+                        <a href="escolares.php">Ir a tienda para agregar productos.</a>
+                        
+                    
+                         </div>
                         </div>
                         
                         </div>
-                    
-                    <?php } 
+                             
 
-                    else { ?>
-
-                     <div class="row h-75 w-80 m-5 rounded bg-light">
-                         <div class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center">
-                             <p class="m-4">Carrito vacio</p>
-                         </div>
-                     </div>
-
-
+                        
                      <?php }  ?>
 
                     </div>

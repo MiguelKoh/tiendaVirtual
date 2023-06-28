@@ -52,7 +52,7 @@ const enviarDatos = async (idTamanos, cantidad) => {
 
     if (respuesta.ok) {
       const data = await respuesta.json();
-      return data[0].cantidadTotalCarrito; // Indica que los datos se enviaron correctamente
+      return data[0].cantidadTotalCarrito;
     
     } else {
       throw new Error('Error en la solicitud. Estado: ' + respuesta.status);
@@ -120,68 +120,4 @@ form.addEventListener("submit", async (event) => {
 
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
-
-
-
-
-
- 
-
-
-
- 
-
- 
-
 
