@@ -26,13 +26,12 @@ const changeCounter = async ()=>{
    function bindQuantityInputChangeListener(quantityInput) {
     quantityInput.addEventListener('change', function() {
       if (isPositiveInteger(quantityInput.value)) {
-        var parentTD = quantityInput.closest('td');
-        var newRow = '<div class="row" style="margin-top: 2px;">' +
-                      '<div class="col-md-12">' +
-                      '<button class="update btn btn-default btn-sm" type="button">Actualizar</button>' +
-                      '</div>' +
+        var parentRow = quantityInput.closest('.row');
+        var newCol =  '<div class="col-lg-9 col-sm-12 px-0 d-flex mt-sm-2">' +
+                       '<button class="update btn btn-default btn-sm" type="button">Actualizar</button>' +
                       '</div>';
-        parentTD.insertAdjacentHTML('beforeend', newRow);
+                      
+        parentRow.insertAdjacentHTML('beforeend', newCol);
         quantityInput.removeEventListener('change', arguments.callee);
       } else {
         quantityInput.value = '';
@@ -42,11 +41,10 @@ const changeCounter = async ()=>{
   
 
 
-const quantityInputs = document.getElementsByName('cantidad');
-quantityInputs.forEach((quantityInput)=>{
-    bindQuantityInputChangeListener(quantityInput);
-    
- })
+const quantityInputs = document.getElementsByName("cantidad");
+quantityInputs.forEach((quantityInput) => {
+  bindQuantityInputChangeListener(quantityInput);
+});
 
 
 

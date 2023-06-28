@@ -167,7 +167,9 @@ margin-top: 3rem!important;
 .w-sm-35{
     width: 35%!important;
 }
-
+.mt-sm-2{
+  margin-top: 0.5rem!important;
+}
 
 }/*fin media query*/
 
@@ -235,7 +237,7 @@ text-decoration: none;
   padding: 8px;
   font-size: 14px;
   background-color: #fff;
-  width: 25%;
+
 }
 
 

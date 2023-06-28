@@ -140,7 +140,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                                 <div class="value mb-3 d-flex align-items-center">
                                 <p class="mb-0 d-flex font-weight-bold mr-2">Cantidad:</p>
                                
-                                    <input type="number" class="custom-input" id="cantidad" min="1" value="1">
+                                    <input type="number" class="custom-input w-25" id="cantidad" min="1" value="1">
                                 </div>
                             
                             <div>

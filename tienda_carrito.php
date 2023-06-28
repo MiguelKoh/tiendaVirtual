@@ -134,8 +134,8 @@ foreach ($_SESSION['carrito'] as $producto) {
                               
                               <td class="col-3 cantidad">
                                 <div class="row">
-                                    <div class="col">
-                                      <input type="number" class="custom-input" name="cantidad" min="1" max="100" value="<?=$producto['cantidad']?>">
+                                    <div class="col-lg-3 col-sm-12 px-0">
+                                      <input type="number" class="custom-input w-75" name="cantidad" min="1" max="100" value="<?=$producto['cantidad']?>">
                                     </div>
                                 </div>
                               </td>
