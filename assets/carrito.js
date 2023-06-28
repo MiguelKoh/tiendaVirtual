@@ -1,3 +1,25 @@
+
+
+const changeCounter = async ()=>{
+ 
+ try {
+    const counter = document.getElementById("counter");
+    const respuesta = await fetch("./mostrar_total_carrito.php");
+    const data = await respuesta.json();
+    counter.innerHTML = data[0].cantidadTotalCarrito;
+
+  } catch(error){
+    console.log(error);
+  }
+}//fin de changeCounter
+
+
+
+
+
+
+
+
 function bindQuantityInputChangeListener(quantityInput) {
         quantityInput.change(function () {
             if (isPositiveInteger(quantityInput.val())) {
@@ -44,8 +66,10 @@ function bindQuantityInputChangeListener(quantityInput) {
                     if ($.trim(result)) {
                         parentTR.remove();
                         $('#total').html(result);
+                        changeCounter();
                     } else {
                         $('#panel-productos').html('Carrito vac&iacute;o. <a href="tienda.php">Ir a tienda para agregar productos.</a>');
+                        changeCounter();
                         $('#generar-ficha').addClass('disabled');
                     }
                 }
