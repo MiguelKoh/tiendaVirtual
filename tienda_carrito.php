@@ -132,7 +132,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                                   <img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-50" alt=""></td>
                               <td class="col-3">$<?= number_format($precioTotalProducto, 2) ?></td>
                               
-                              <td class="col-3">
+                              <td class="col-3 cantidad">
                                 <div class="row">
                                     <div class="col">
                                       <input type="number" class="custom-input" name="cantidad" min="1" max="100" value="<?=$producto['cantidad']?>">
@@ -177,7 +177,7 @@ foreach ($_SESSION['carrito'] as $producto) {
     </div>
 
   <script src="assets/jquery-3.1.1.min.js"></script>
-  <script src="assets/carrito.js"></script>
+  <script src="assets/carrito2.js"></script>
 
 </body>
 
