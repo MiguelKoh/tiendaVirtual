@@ -2,6 +2,25 @@ html, body {
     height: 100%;
   }
 
+.table .thead-dark th {
+    color: #fff;
+    background-color: #131921!important;
+    border-color: #131921!important;
+}
+
+.text-align-center{
+    text-align: center!important;
+}
+
+td {
+    vertical-align: middle!important;
+}
+
+
+th {
+    text-align: center!important;
+}
+
 .pointer{
     cursor: pointer;
 }

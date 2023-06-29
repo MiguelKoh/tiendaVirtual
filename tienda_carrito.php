@@ -111,7 +111,6 @@ foreach ($_SESSION['carrito'] as $producto) {
                           <thead class="thead-dark">
                             <tr>
                               <th scope="col">Producto</th>
-                              <th scope="col"></th>
                               <th scope="col">Precio</th>
                               <th scope="col">Cantidad</th>
                               
@@ -125,18 +124,30 @@ foreach ($_SESSION['carrito'] as $producto) {
                                                         $precioTotal += $precioTotalProducto;
                             ?>
                             <tr id="<?=$id?>">
-                              <td class="col-4"><?=  $producto['nombre']?>
+                              
+
+                              <td class="col-4">
+                               <div class="row">
+                                 <div class="col-7 pr-0">
+                                  <h6><?=  $producto['nombre']?></h6>
                                  <p>Talla: <?= $producto['tamano'] ?></p>
                                  <a class="delete-item" href="#">Eliminar</a>
+                                 </div>
+                                 <div class="col-5 d-flex align-items-center pl-5">
+                                 <img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-100" alt="">
+                                 </div>
+                                </div>
                               </td>
-                              
-                              <td class="col-2">
-                                  <img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-50" alt=""></td>
-                              <td class="col-3">
+
+                             
+
+
+
+                              <td class="col-4 text-align-center">
                                  <p class="precio-producto">$<?= number_format($precioTotalProducto,2)?></p>
                               </td>
                               
-                              <td class="col-3 cantidad">
+                              <td class="col-4 cantidad">
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-12 px-0">
                                       <input type="number" class="custom-input w-75" name="cantidad" min="1" max="100" value="<?=$producto['cantidad']?>">
@@ -150,8 +161,9 @@ foreach ($_SESSION['carrito'] as $producto) {
                            <?php } ?> 
                             <tr>
                              <td><p class="font-weight-bold">Total</p></td>
+                             
+                             <td class="text-align-center"><p class="text-info font-weight-bold" id="total">$<?=number_format($precioTotal,2)?></p></td>
                              <td></td>
-                             <td><p class="text-info font-weight-bold" id="total">$<?=number_format($precioTotal,2)?></p></td>
                             </tr>
                           
                           </tbody>
