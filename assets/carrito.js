@@ -15,17 +15,13 @@ const changeCounter = async ()=>{
 
 
 
-
-
-
-
-
 function bindQuantityInputChangeListener(quantityInput) {
         quantityInput.change(function () {
             if (isPositiveInteger(quantityInput.val())) {
-                var parentTD = quantityInput.closest("td");
-                parentTD.append('<div class="row" style="margin-top: 2px;"><div class="col-md-12">' +
-                    '<button class="update btn btn-default btn-sm" type="button">Actualizar</button></div></div>');
+                var parentTD = quantityInput.closest(".row");
+                parentTD.append('<div class="col-lg-9 col-sm-12 px-0 d-flex mt-sm-2">' +
+                       '<button class="update btn btn-default btn-sm" type="button">Actualizar</button>' +
+                      '</div>');
                 quantityInput.off('change');
             } else {
                 quantityInput.val('');
@@ -45,9 +41,10 @@ function bindQuantityInputChangeListener(quantityInput) {
         
         $('input[name=cantidad]').change(function () {
             if (isPositiveInteger($(this).val())) {
-                var parentTD = $(this).closest("td");
-                parentTD.append('<div class="row" style="margin-top: 2px;"><div class="col-md-12">' +
-                    '<button class="update btn btn-default btn-sm" type="button">Actualizar</button></div></div>');
+                var parentTD = $(this).closest(".row");
+                parentTD.append('<div class="col-lg-9 col-sm-12 px-0 d-flex mt-sm-2">' +
+                       '<button class="update btn btn-default btn-sm" type="button">Actualizar</button>' +
+                      '</div>');
                 $(this).off('change');
             } else {
                 $(this).val('');
@@ -101,7 +98,7 @@ function bindQuantityInputChangeListener(quantityInput) {
             }
 
             bindQuantityInputChangeListener(quantityInput);
-            updateButton.closest('.row').remove();
+            updateButton.closest('.update').remove();
         });
     })
     

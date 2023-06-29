@@ -91,7 +91,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                              
                 <div class="row fondo">
                     <div class="col-12 d-flex justify-content-center align-items-center fondoProductos">
-                        <h4 class="text-white my-2 fuenteTitulo" id="titulo">Carrito</h4>
+                        <h4 class="text-white my-2 fuenteTitulo" id="titulo"><span><i class="fas fa-shopping-cart"></i></span> Carrito</h4>
                     </div>
                 </div>
                  <!-- producto aquí -->
@@ -113,6 +113,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                               <th scope="col"></th>
                               <th scope="col">Precio</th>
                               <th scope="col">Cantidad</th>
+                              
                             </tr>
                           </thead>
                           <tbody>
@@ -130,7 +131,9 @@ foreach ($_SESSION['carrito'] as $producto) {
                               
                               <td class="col-2">
                                   <img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-50" alt=""></td>
-                              <td class="col-3">$<?= number_format($precioTotalProducto, 2) ?></td>
+                              <td class="col-3">
+                                 <p class="precio-producto">$<?= number_format($precioTotalProducto, 2)?></p>
+                              </td>
                               
                               <td class="col-3 cantidad">
                                 <div class="row">
@@ -139,6 +142,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                                     </div>
                                 </div>
                               </td>
+
                             
 
                             </tr>
@@ -177,7 +181,7 @@ foreach ($_SESSION['carrito'] as $producto) {
     </div>
 
   <script src="assets/jquery-3.1.1.min.js"></script>
-  <script src="assets/carrito2.js"></script>
+  <script src="assets/carrito.js"></script>
 
 </body>
 

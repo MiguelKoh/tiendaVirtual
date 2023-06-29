@@ -26,8 +26,8 @@ const changeCounter = async ()=>{
    function bindQuantityInputChangeListener(quantityInput) {
     quantityInput.addEventListener('change', function() {
       if (isPositiveInteger(quantityInput.value)) {
-        var parentRow = quantityInput.closest('.row');
-        var newCol =  '<div class="col-lg-9 col-sm-12 px-0 d-flex mt-sm-2">' +
+        let parentRow = quantityInput.closest('.row');
+        let newCol =  '<div class="col-lg-9 col-sm-12 px-0 d-flex mt-sm-2">' +
                        '<button class="update btn btn-default btn-sm" type="button">Actualizar</button>' +
                       '</div>';
                       
@@ -46,36 +46,34 @@ quantityInputs.forEach((quantityInput) => {
   bindQuantityInputChangeListener(quantityInput);
 });
 
+$('.cantidad').on('click', '.update', function () {
+    var updateButton = $(this);
+    var quantityInput = updateButton.closest('.cantidad').find('input');
+    var productID = updateButton.closest('tr').attr('id');
+
+    if (isPositiveInteger(quantityInput.val())) {
+        productPrize = updateButton.closest('td').siblings().find('.precio-producto');
+        $.ajax({
+            url: 'tienda_cambiar_cantidad.php',
+            method: 'POST',
+            dataType: 'json',
+            data: {
+                id: productID,
+                cantidad: quantityInput.val()
+            },
+            success: function (result) {
+                changeCounter()
+                $('#total').html('<strong class="text-primary">&dollar;' + result.precioTotal + '</strong>');
+                productPrize.html('&dollar;' + result.precioTotalProducto);
+            }
+        });
+    } else {
+        quantityInput.val('');
+    }
+
+    bindQuantityInputChangeListener(quantityInput);
+    updateButton.closest('.col').remove();
+});
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
- const quantityInputs = document.getElementsByName('cantidad');
-
- for (let i = 0; i < quantityInputs.length; i++) {
-   quantityInputs[i].addEventListener('change', function() {
-     alert('prueba');
-   });
- }
-
- quantityInputs.forEach((quantityInput)=>{
-    quantityInput.addEventListener('change',()=>{
-        alert('prueba2')
-    })
- }) */
