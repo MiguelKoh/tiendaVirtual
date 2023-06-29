@@ -132,7 +132,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                               <td class="col-2">
                                   <img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-50" alt=""></td>
                               <td class="col-3">
-                                 <p class="precio-producto">$<?= number_format($precioTotalProducto, 2)?></p>
+                                 <p class="precio-producto">$<?= number_format($precioTotalProducto)?></p>
                               </td>
                               
                               <td class="col-3 cantidad">
@@ -150,7 +150,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                             <tr>
                              <td><p class="font-weight-bold">Total</p></td>
                              <td></td>
-                             <td><p class="text-info font-weight-bold" id="total">$<?=$precioTotal?></p></td>
+                             <td><p class="text-info font-weight-bold" id="total">$<?=number_format($precioTotal)?></p></td>
                             </tr>
                           
                           </tbody>
