@@ -135,8 +135,8 @@ foreach ($_SESSION['carrito'] as $producto) {
                                <div class="row">
                                  <div class="col-7 pr-0">
                                   <h6><?=  $producto['nombre']?></h6>
-                                 <p>Talla: <?= $producto['tamano'] ?></p>
-                                 <a class="delete-item" href="#">Eliminar</a>
+                                 <p><span class="font-weight-500">Talla: </span><?= $producto['tamano'] ?></p>
+                                 <a class="delete-item font-weight-500" href="#">Eliminar</a>
                                  </div>
                                  <div class="col-5 d-flex align-items-center pl-5">
                                  <img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-100" alt="">
@@ -175,7 +175,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                         
                         </table>
                      <?php } else {?> 
-                          <p class="my-4 mr-1">Carrito vacio.</p> <a href="escolares.php"> Ir a tienda para agregar productos.</a>
+                          <p class="my-4 mr-1">Carrito vacio.</p> <a href="escolares.php" class="font-weight-500"> Ir a tienda para agregar productos.</a>
 
                          </div>
                         </div>
