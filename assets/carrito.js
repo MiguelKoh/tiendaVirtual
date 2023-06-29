@@ -90,7 +90,7 @@ function bindQuantityInputChangeListener(quantityInput) {
                     },
                     success: function (result) {
                         changeCounter();
-                        $('#total').html('<strong class="text-primary">&dollar;' + result.precioTotal + '</strong>');
+                        $('#total').html('$'+result.precioTotal);
                         productPrize.html('&dollar;' + result.precioTotalProducto);
                     }
                 });
@@ -99,7 +99,7 @@ function bindQuantityInputChangeListener(quantityInput) {
             }
 
             bindQuantityInputChangeListener(quantityInput);
-            updateButton.closest('.update').remove();
+            updateButton.closest('div').remove();
         });
     })
     

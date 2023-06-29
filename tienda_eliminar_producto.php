@@ -12,7 +12,7 @@ if (count($_SESSION['carrito']) > 0) {
         $precioTotal += $precioTotalProducto;
     }
 
-    echo '<strong class="text-primary">&dollar;' . number_format($precioTotal, 2) . '</strong>';
+    echo '$' . number_format($precioTotal, 2);
 }
 
 
