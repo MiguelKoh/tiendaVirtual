@@ -2,6 +2,12 @@ html, body {
     height: 100%;
   }
 
+.btn-ficha{
+    background-color: #485769!important;
+    border-color: #485769!important;
+}
+
+
 .table .thead-dark th {
     color: #fff;
     background-color: #131921!important;
