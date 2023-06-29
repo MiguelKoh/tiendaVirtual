@@ -25,7 +25,7 @@ if (mysqli_num_rows($resultadoTamanos) > 0 && $cantidad > 0) {
         $fila = mysqli_fetch_array($resultadoTamanos);
         $item = array(
             'nombre' => $fila['nombre'],
-            'precio' => number_format($fila['precio'], 2),
+            'precio' => number_format($fila['precio']),
             'tamano' => $fila['tamano'],
             'codigo' => $fila['codigoInventario'],
             'cantidad' => $cantidad,

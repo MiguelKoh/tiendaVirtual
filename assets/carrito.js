@@ -18,8 +18,8 @@ const changeCounter = async ()=>{
 function bindQuantityInputChangeListener(quantityInput) {
         quantityInput.change(function () {
             if (isPositiveInteger(quantityInput.val())) {
-                var parentTD = quantityInput.closest(".row");
-                parentTD.append('<div class="col-lg-9 col-sm-12 px-0 d-flex mt-sm-2">' +
+                var parentRow = quantityInput.closest(".row");
+                parentRow.append('<div class="col-lg-9 col-sm-12 px-0 d-flex mt-sm-2">' +
                        '<button class="update btn btn-default btn-sm" type="button">Actualizar</button>' +
                       '</div>');
                 quantityInput.off('change');
@@ -89,6 +89,7 @@ function bindQuantityInputChangeListener(quantityInput) {
                         cantidad: quantityInput.val()
                     },
                     success: function (result) {
+                        changeCounter();
                         $('#total').html('<strong class="text-primary">&dollar;' + result.precioTotal + '</strong>');
                         productPrize.html('&dollar;' + result.precioTotalProducto);
                     }
