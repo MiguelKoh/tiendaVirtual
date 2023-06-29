@@ -100,13 +100,14 @@ foreach ($_SESSION['carrito'] as $producto) {
              
                  
                 <div class="d-flex justify-content-center">
-                    
-                    <div class="row h-75 w-80 m-5 rounded">
-                        <div id="panel-productos" class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center bg-light px-0">
+                
+                <?php if (count($_SESSION['carrito']) > 0) {?> 
+                    <div class="row h-75 w-80 m-5">
+                        <div id="panel-productos" class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center px-0">
                         
-                    <?php if (count($_SESSION['carrito']) > 0) {?>    
+                       
 
-                        <table class="table bg-light">
+                        <table class="table bg-light rounded">
                           <thead class="thead-dark">
                             <tr>
                               <th scope="col">Producto</th>
@@ -156,21 +157,32 @@ foreach ($_SESSION['carrito'] as $producto) {
                           </tbody>
                         
                         </table>
-                     
-                        <?php } else {?>
-                        
-                        <p class="m-4">Carrito vacio</p>
-                        <a href="escolares.php">Ir a tienda para agregar productos.</a>
-                        
                     
                          </div>
                         </div>
+                     
+
+                      <?php } else {?>
+                         <div class="row h-75 w-80 m-5 rounded">
+                            <div id="panel-productos" class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center bg-light px-0 rounded">
+                            <p class="m-4">Carrito vacio</p>
+                              <a href="escolares.php">Ir a tienda para agregar productos.</a>
+                            </div>
+
+                         </div>
+
+                      <?php }  ?> 
                         
+
+
+
+
+
                         </div>
-                             
+                      
 
                         
-                     <?php }  ?>
+                    
 
                     </div>
                 </div>      
