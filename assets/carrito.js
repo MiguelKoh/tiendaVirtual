@@ -7,11 +7,24 @@ const changeCounter = async ()=>{
     const respuesta = await fetch("./mostrar_total_carrito.php");
     const data = await respuesta.json();
     counter.innerHTML = data[0].cantidadTotalCarrito;
+    return parseInt(counter.innerHTML);
 
   } catch(error){
     console.log(error);
   }
 }//fin de changeCounter
+
+const btnFicha = document.getElementById('generar-ficha');
+
+const disabledBtn = async () => {
+  const counterValue = await changeCounter();
+  if (counterValue === 0) {
+    btnFicha.classList.add('disabled')
+  }
+};
+
+document.addEventListener("DOMContentLoaded", disabledBtn);
+
 
 
 
