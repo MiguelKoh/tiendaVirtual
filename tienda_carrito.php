@@ -101,18 +101,17 @@ foreach ($_SESSION['carrito'] as $producto) {
                  
                 <div class="d-flex justify-content-center">
                 
-                <?php if (count($_SESSION['carrito']) > 0) {?> 
+                
                     <div class="row h-75 w-80 m-5">
                         
                         <div class="col-lg-12 mb-3 px-0">
-                         <a href="#" class="btn btn-primary btn-ficha">
+                         <a href="#" class="btn btn-primary btn-ficha" id="generar-ficha">
                          <i class="fas fa-file"></i>  Generar ficha de pago</a>   
                         </div>
                         
-
-
-                        <div id="panel-productos" class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center px-0">
-                    
+                        <div id="panel-productos" class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center px-0 bg-light rounded">
+                     
+                     <?php if (count($_SESSION['carrito']) > 0) {?>
                         <table class="table bg-light rounded">
                           <thead class="thead-dark">
                             <tr>
@@ -175,36 +174,23 @@ foreach ($_SESSION['carrito'] as $producto) {
                           </tbody>
                         
                         </table>
-                    
+                     <?php } else {?> 
+                          <p class="my-4 mr-1">Carrito vacio.</p> <a href="escolares.php"> Ir a tienda para agregar productos.</a>
+
                          </div>
                         </div>
                      
 
-                      <?php } else {?>
-                         <div class="row h-75 w-80 m-5 rounded">
-                            <div class="col-lg-12 mb-3">
-                             <a href="#" class="btn btn-primary btn-ficha">
-                             <i class="fas fa-file"></i>  Generar ficha de pago</a>   
-                            </div>
-                            <div id="panel-productos" class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center bg-light px-0 rounded">
-                            <p class="m-4">Carrito vacio</p>
-                              <a href="escolares.php">Ir a tienda para agregar productos.</a>
-                            </div>
-
-                         </div>
-
-                      <?php }  ?> 
-                        
-
-
-
-
-
-                        </div>
-                      
-
+                     
                         
                     
+                        </div>
+                     
+                           
+                           
+                        
+                      <?php }  ?> 
+                        
 
                     </div>
                 </div>      

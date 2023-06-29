@@ -65,7 +65,7 @@ function bindQuantityInputChangeListener(quantityInput) {
                         $('#total').html(result);
                         changeCounter();
                     } else {
-                        $('#panel-productos').html('<p class="m-4">Carrito vacio</p> <a href="escolares.php">Ir a tienda para agregar productos.</a>');
+                        $('#panel-productos').html('<p class="my-4 mr-1">Carrito vacio.</p> <a href="escolares.php"> Ir a tienda para agregar productos.</a>');
                         changeCounter();
                         $('#generar-ficha').addClass('disabled');
                     }
