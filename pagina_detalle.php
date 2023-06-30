@@ -132,6 +132,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                         <div class="col-lg-4 col-sm-12 mt-5 px-0">
                             <div class="ml-5">
                                 <h4 class="mb-4"><?= $producto[0]["nombre"] ?></h4>
+                                <hr>
                                 <form id="myForm">
                             <div class="product-info">
                                 <div class="font-weight-bold mr-2">Precio:</div>
@@ -164,7 +165,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                     </div>
                         <div class="notificacion w-13 h-25 row w-sm-35" id="notificacion">
                           <div class="col-12">  
-                        <p class="notificacion__titulo d-flex justify-content-center">Agregado al carrito</p>
+                        <p class="notificacion__titulo d-flex justify-content-center mt-3 mb-0">Agregado al carrito</p>
                            </div>
                            <div class="col-12 d-flex justify-content-center">  
                                 <img src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="" class="w-50 h-auto"/>
