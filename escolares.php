@@ -29,7 +29,7 @@ foreach ($_SESSION['carrito'] as $producto) {
     <link rel="stylesheet" href="assets/styles.css" type="text/css" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap.min.css">
-    <title>Tienda virtual</title>
+    <title>Tienda virtual - Escolares</title>
     <link rel="shortcut icon" type="image/x-icon" href="imagenes/banners/favicon_uady.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-************" crossorigin="anonymous" />
@@ -40,6 +40,8 @@ foreach ($_SESSION['carrito'] as $producto) {
         <div class="row">
             <div class="col-lg-2 col-md-2 col-sm-12 fondoSidebar h-lg-100 h-sm-50" id="sidebar">
                 <!-- Contenido del sidebar aquí -->
+                 <!--fixed -->
+                 <div class="fixed">
                 <div class="row my-5">
                     <div class="col-4 d-flex justify-content-center align-items-center px-0 ">
                         <div id="btn-sidebar">
@@ -83,7 +85,8 @@ foreach ($_SESSION['carrito'] as $producto) {
                         </div>
                     </li>
                 </ul>
-            
+             </div>
+            <!--fixed -->
             </div>
 
                 <!-- Fin del contenido del sidebar -->

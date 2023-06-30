@@ -27,7 +27,7 @@ foreach ($_SESSION['carrito'] as $producto) {
     <link rel="stylesheet" href="assets/styles.css" type="text/css" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap.min.css">
-    <title>Tienda virtual</title>
+    <title>Tienda virtual - Carrito</title>
     <link rel="shortcut icon" type="image/x-icon" href="imagenes/banners/favicon_uady.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-************" crossorigin="anonymous" />
@@ -102,7 +102,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                 <div class="d-flex justify-content-center">
                 
                 
-                    <div class="row h-75 w-80 m-5">
+                    <div class="row h-75 w-75 m-5">
                         
                         <div class="col-lg-12 mb-3 px-0">
                          <a href="#" class="btn btn-primary btn-ficha" id="generar-ficha">
@@ -131,15 +131,15 @@ foreach ($_SESSION['carrito'] as $producto) {
                             <tr id="<?=$id?>">
                               
 
-                              <td class="col-4">
+                              <td class="col-5">
                                <div class="row">
-                                 <div class="col-7 pr-0">
+                                 <div class="col-lg-7 col-sm-8">
                                   <h6><?=  $producto['nombre']?></h6>
                                  <p><span class="font-weight-500">Talla: </span><?= $producto['tamano'] ?></p>
                                  <a class="delete-item font-weight-500" href="#">Eliminar</a>
                                  </div>
-                                 <div class="col-5 d-flex align-items-center pl-5">
-                                 <img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-100" alt="">
+                                 <div class="col-lg-5  col-sm-4 d-flex align-items-center">
+                                   <img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-70" alt="">
                                  </div>
                                 </div>
                               </td>
@@ -148,14 +148,14 @@ foreach ($_SESSION['carrito'] as $producto) {
 
 
 
-                              <td class="col-5 text-align-center">
+                              <td class="col-4 text-align-center">
                                  <p class="precio-producto">$<?= number_format($precioTotalProducto,2)?></p>
                               </td>
                               
                               <td class="col-3 cantidad">
-                                <div class="row">
+                                <div class="row ml-2 d-flex align-items-end">
                                     <div class="col-lg-3 col-sm-12 px-0">
-                                      <input type="number" class="custom-input w-75" name="cantidad" min="1" max="100" value="<?=$producto['cantidad']?>">
+                                      <input type="number" class="custom-input input-cart" name="cantidad" min="1" max="100" value="<?=$producto['cantidad']?>">
                                     </div>
                                 </div>
                               </td>

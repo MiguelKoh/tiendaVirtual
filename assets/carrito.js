@@ -33,7 +33,7 @@ function bindQuantityInputChangeListener(quantityInput) {
             if (isPositiveInteger(quantityInput.val())) {
                 var parentRow = quantityInput.closest(".row");
                 parentRow.append('<div class="col-lg-9 col-sm-12 px-0 d-flex mt-sm-2">' +
-                       '<button class="update btn btn-default btn-sm" type="button">Actualizar</button>' +
+                       '<button class="update btn btn-secondary" type="button">Actualizar</button>' +
                       '</div>');
                 quantityInput.off('change');
             } else {
@@ -56,7 +56,7 @@ function bindQuantityInputChangeListener(quantityInput) {
             if (isPositiveInteger($(this).val())) {
                 var parentTD = $(this).closest(".row");
                 parentTD.append('<div class="col-lg-9 col-sm-12 px-0 d-flex mt-sm-2">' +
-                       '<button class="update btn btn-default btn-sm" type="button">Actualizar</button>' +
+                       '<button class="update btn btn-secondary" type="button">Actualizar</button>' +
                       '</div>');
                 $(this).off('change');
             } else {
