@@ -131,7 +131,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                         </div>
                         <div class="col-lg-4 col-sm-12 mt-5 px-0">
                             <div class="ml-5">
-                                <h4 class="mb-4"><?= $producto[0]["nombre"] ?></h4>
+                                <h4><?= $producto[0]["nombre"] ?></h4>
                                 <hr>
                                 <form id="myForm">
                             <div class="product-info">

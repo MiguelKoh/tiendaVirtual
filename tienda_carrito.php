@@ -105,7 +105,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                     <div class="row h-75 w-75 m-5">
                         
                         <div class="col-lg-12 mb-3 px-0">
-                         <a href="#" class="btn btn-primary btn-ficha" id="generar-ficha">
+                         <a href="#" class="btn btn-secondary btn-ficha" id="generar-ficha">
                          <i class="fas fa-file"></i>  Generar ficha de pago</a>   
                         </div>
                         
