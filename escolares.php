@@ -39,7 +39,9 @@ foreach ($_SESSION['carrito'] as $producto) {
     <div class="container-fluid h-100">
         <div class="row">
             <div class="col-lg-2 col-md-2 col-sm-12 fondoSidebar h-lg-100 h-sm-50" id="sidebar">
-                <!-- Contenido del sidebar aquí -->
+                
+            
+            <!-- Contenido del sidebar aquí -->
                  <!--fixed -->
                  <div class="fixed">
                 <div class="row my-5">
@@ -55,8 +57,8 @@ foreach ($_SESSION['carrito'] as $producto) {
                 </div>
                 <ul>
                 
-                <a href="escolares.php"><li>Escolares</li></a>
-                <a href="deportivos.php"><li>Deportivos</li></a>
+                <a href="escolares.php" class="link"><li>Escolares</li></a>
+                <a href="deportivos.php" class="link"><li>Deportivos</li></a>
                     
                 <a href="tienda_carrito.php" class="link">
                     <li>
@@ -90,6 +92,13 @@ foreach ($_SESSION['carrito'] as $producto) {
             </div>
 
                 <!-- Fin del contenido del sidebar -->
+
+
+
+
+
+
+
 
             <div class="col-lg-10 col-md-10 col-sm-12" id="contenido">
                 <!-- Contenido principal aquí -->

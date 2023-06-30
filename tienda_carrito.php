@@ -149,7 +149,7 @@ foreach ($_SESSION['carrito'] as $producto) {
 
 
                               <td class="col-4 text-align-center">
-                                 <p class="precio-producto">$<?= number_format($precioTotalProducto,2)?></p>
+                                 <p class="precio-producto h6">$<?= number_format($precioTotalProducto,2)?></p>
                               </td>
                               
                               <td class="col-3 cantidad">

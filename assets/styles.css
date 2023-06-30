@@ -1,6 +1,9 @@
 html, body {
     height: 100%;
   }
+.w-20{
+    width: 20%;
+}
 
 .update{
     margin-left: 1rem;
@@ -22,22 +25,25 @@ html, body {
 
  }
  
+
  .product-img{
     width: 75%;
  }
 
 
   @media (min-width: 1200px) { 
-    .fixed{
-            position: fixed;
-            width: 253px;
-            /*width: auto;*/
+    
+   .fixed{
+        
+       position: fixed;
+        width: 253px;
+         /*width: auto;*/
     
         }
     
     
     
-    }
+    }/*fin de @media*/
 
 
 
@@ -45,6 +51,7 @@ html, body {
  font-weight: 500;
 
 }
+
 .btn-ficha{
     background-color: #485769!important;
     border-color: #485769!important;
@@ -73,18 +80,20 @@ th {
 .pointer{
     cursor: pointer;
 }
+
 .pointer input{
     cursor: pointer;
 }
 
-#contenido{
-transition: margin-left 1s ease-in-out;
+#contenido {
+    transition: margin-left 1s ease-in-out;
+
 }
 
-#sidebar{
+#sidebar {
     padding: 0;
     /*left: 0px;*/
-    
+
     /*transition: width 1s ease-in-out;*/
 
 }
@@ -97,18 +106,18 @@ transition: margin-left 1s ease-in-out;
 
 
 
-#btn-sidebar{
-cursor: pointer;
-border-radius: 4px;
-display: flex;
-justify-content: center;
-align-items: center;
-/*width: 2rem;*/
-padding: .5rem 1rem;
-border: 1px solid white;
+#btn-sidebar {
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 1rem;
+    border: 1px solid white;
 }
-#btn-sidebar:hover{
- background: rgba(255, 255, 255, 0.2);
+
+#btn-sidebar:hover {
+    background: rgba(255, 255, 255, 0.2);
 
 }
 
@@ -117,31 +126,29 @@ border: 1px solid white;
     background-color: #1A1C3A;
 }
 .fondo{
-/*background-color:rgba(218, 230, 229, 1);*/
 background-color: #1A1C3A;
 }
 
 .fondoProductos{
     background-color: #CE850C;
 }
+
 .fuenteTitulo{
     font: 400 26px/40px Roboto,Helvetica Neue,sans-serif;
 }
 
-#footer{
-    background-color: #002E5F;
-}
+
 .fondoSidebar{
     background-color: #1B2E4F;
 }
 
-#sidebar ul li a{
-  padding-top: 50px;
-  cursor: pointer;
-  color: rgba(500, 500, 500, .9);
- text-align: center;
- padding:10px;
- list-style: none;
+#sidebar ul li a {
+    padding-top: 50px;
+    cursor: pointer;
+    color: rgba(500, 500, 500, .9);
+    text-align: center;
+    padding: 10px;
+    list-style: none;
 }
 
 #sidebar ul li{
@@ -176,36 +183,15 @@ font-weight: bold;
 }
 
 
-@media (min-width: 992px) { 
-    
-.logoUady {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        /*max-width: 75%;
-        padding-left:30px;
-        padding-right: 30px;
-        padding-top: 20px;
-        padding-bottom: 20px;*/
-    }
-
-
-
-
-
-}/*fin @media*/
-
-
-
 @media (max-width: 575.98px) { 
 
-.h-sm-75{
-    height: 75%!important;
-}
-.h-sm-50{
-    height: 50%!important;
-}
+.h-sm-75 {
+        height: 75% !important;
+    }
+
+.h-sm-50 {
+        height: 50% !important;
+    }
 
 .w-sm-50{
     width: 50%!important;
@@ -255,9 +241,7 @@ margin-top: 3rem!important;
 }
 
 
-
-
-}/*fin media query*/
+}/*fin media query sm*/
 
 
 
@@ -265,7 +249,7 @@ margin-top: 3rem!important;
     width: 75%;
 }
 
-.w-13{
+.w-lg-13{
     width: 13%;
 }
 
@@ -287,16 +271,14 @@ text-decoration: none;
 
 
 /* ----- ----- NOTIFICACIÓN ----- ----- */
+
 .notificacion {
     position: fixed;
     bottom: 20px;
-    /*padding: 10px;*/
-    background-color: #ffffff!important;
-    border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     z-index: 9999;
     transition: 0.3s ease-in all;
-    right: -200px;
+    right: -250px;
     
 }
 
@@ -324,17 +306,5 @@ text-decoration: none;
   font-size: 14px;
   background-color: #fff;
 
-}
-
-
-.product-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-
-.value {
-    margin-right: 10px;
 }
 
