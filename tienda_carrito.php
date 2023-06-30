@@ -131,15 +131,15 @@ foreach ($_SESSION['carrito'] as $producto) {
                             <tr id="<?=$id?>">
                               
 
-                              <td class="col-5">
+                              <td class="col-lg-6 col-sm-5">
                                <div class="row">
-                                 <div class="col-lg-7 col-sm-8">
-                                  <h6><?=  $producto['nombre']?></h6>
-                                 <p><span class="font-weight-500">Talla: </span><?= $producto['tamano'] ?></p>
+                                 <div class="col-lg-6 col-sm-8">
+                                  <h5 class="mb-1 mt-2 title-Product-cart mb-3"><?=  $producto['nombre']?></h5>
+                                 <p class="mb-1"><span class="font-weight-500">Talla: </span><?= $producto['tamano'] ?></p>
                                  <a class="delete-item font-weight-500" href="#">Eliminar</a>
                                  </div>
-                                 <div class="col-lg-5  col-sm-4 d-flex align-items-center">
-                                   <img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-70" alt="">
+                                 <div class="col-lg-6  col-sm-4 d-flex align-items-center">
+                                   <img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-50" alt="">
                                  </div>
                                 </div>
                               </td>
@@ -148,11 +148,11 @@ foreach ($_SESSION['carrito'] as $producto) {
 
 
 
-                              <td class="col-4 text-align-center">
+                              <td class="col-lg-3 col-sm-4 text-align-center">
                                  <p class="precio-producto h6">$<?= number_format($precioTotalProducto,2)?></p>
                               </td>
                               
-                              <td class="col-3 cantidad">
+                              <td class="col-lg-3 col-sm-3 cantidad">
                                 <div class="row ml-2 d-flex align-items-end">
                                     <div class="col-lg-3 col-sm-12 px-0">
                                       <input type="number" class="custom-input input-cart" name="cantidad" min="1" max="100" value="<?=$producto['cantidad']?>">
