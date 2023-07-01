@@ -57,7 +57,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                <div class="row fondo">
                    <div class="col-12 d-flex justify-content-start align-items-center fondoProductos">
                       <div id="btn-sidebar"> <span class="text-white">&#9776;</span></div>
-                      <h4 class="text-white my-2 fuenteTitulo mx-auto" id="titulo">Productos Escolares</h4>
+                      <h3 class="text-white mx-auto my-2" id="titulo">Productos Escolares</h3>
                    </div>  
                </div>
    

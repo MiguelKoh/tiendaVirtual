@@ -122,7 +122,7 @@ th {
     justify-content: center;
     align-items: center;
     padding: .5rem 1rem;
-    border: 1px solid white;
+    border: 2px solid white;
 }
 
 #btn-sidebar:hover {
@@ -142,8 +142,11 @@ background-color: #1A1C3A;
     background-color: #CE850C;
 }
 
-.fuenteTitulo{
-    font: 400 26px/40px Roboto,Helvetica Neue,sans-serif;
+.fuenteTitulo {
+    font-family: Roboto, Helvetica Neue, sans-serif;
+    font-weight: 400;
+    font-size: 1.625rem; 
+    line-height: 2.5rem; 
 }
 
 

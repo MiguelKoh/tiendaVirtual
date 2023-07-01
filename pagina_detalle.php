@@ -36,7 +36,7 @@ foreach ($_SESSION['carrito'] as $producto) {
 
 <body class="fondo">
     <div class="container-fluid h-100">
-        <div class="row">
+        <div class="row h-100">
             
             <!-- Inicio del sidebar -->
                 <?php
@@ -56,7 +56,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                 <div class="row fondo">
                    <div class="col-12 d-flex justify-content-start align-items-center fondoProductos">
                       <div id="btn-sidebar"> <span class="text-white">&#9776;</span></div>
-                      <h4 class="text-white my-2 fuenteTitulo mx-auto" id="titulo">Producto</h4>
+                      <h3 class="text-white my-2 mx-auto" id="titulo">Producto</h3>
                    </div>  
                </div>
                  <!-- producto aquí -->
