@@ -98,24 +98,20 @@ foreach ($_SESSION['carrito'] as $producto) {
                             ?>
                             <tr id="<?=$id?>">
                               
-
                               <td class="col-lg-6 col-sm-5">
                                <div class="row">
-                                 <div class="col-lg-6 col-sm-8">
-                                  <h5 class="mb-1 mt-2 mb-3"><?=  $producto['nombre']?></h5>
-                                 <p><span class="font-weight-500">Talla: </span><?= $producto['tamano'] ?></p>
-                                 <a class="delete-item font-weight-500" href="#">Eliminar</a>
+                                 <div class="col-lg-7 col-sm-8">
+                                  <h5 class="mb-1 mt-2 mb-3 ml-3"><?=  $producto['nombre']?></h5>
+                                 <p class="mb-1"><span class="font-weight-500 ml-3">Talla: </span><?= $producto['tamano'] ?></p>
+                                 <a class="delete-item font-weight-500 ml-3" href="#">Eliminar</a>
                                  </div>
-                                 <div class="col-lg-6  col-sm-4 d-flex align-items-center">
+                                 <div class="col-lg-5  col-sm-4 d-flex align-items-center">
                                    <img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-50" alt="">
                                  </div>
                                 </div>
                               </td>
 
                              
-
-
-
                               <td class="col-lg-3 col-sm-4 text-align-center">
                                  <p class="precio-producto h6">$<?= number_format($precioTotalProducto,2)?></p>
                               </td>
@@ -128,12 +124,11 @@ foreach ($_SESSION['carrito'] as $producto) {
                                 </div>
                               </td>
 
-                            
-
                             </tr>
+
                            <?php } ?> 
                             <tr>
-                             <td><p class="font-weight-bold">Total</p></td>
+                             <td><p class="font-weight-bold ml-3">Total</p></td>
                              
                              <td class="text-align-center"><p class="text-info font-weight-bold" id="total">$<?=number_format($precioTotal,2)?></p></td>
                              <td></td>
@@ -143,6 +138,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                         
                         </table>
                      <?php } else {?> 
+                          
                           <p class="my-4 mr-1">Carrito vacio.</p> <a href="escolares.php" class="font-weight-500"> Ir a tienda para agregar productos.</a>
 
                          </div>
