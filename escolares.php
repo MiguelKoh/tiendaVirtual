@@ -29,30 +29,31 @@ foreach ($_SESSION['carrito'] as $producto) {
     <link rel="stylesheet" href="assets/styles.css" type="text/css" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap.min.css">
+
     <title>Tienda virtual - Escolares</title>
     <link rel="shortcut icon" type="image/x-icon" href="imagenes/banners/favicon_uady.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-************" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </head>
 
 <body class="fondo">
     <div class="container-fluid h-100">
-        <div class="row">
+        <div class="row" id="desplazar">
             <div class="col-lg-2 col-md-2 col-sm-12 fondoSidebar h-lg-100 h-sm-50" id="sidebar">
                 
             
             <!-- Contenido del sidebar aquí -->
                  <!--fixed -->
-                 <div class="fixed">
-                <div class="row my-5">
-                    <div class="col-4 d-flex justify-content-center align-items-center px-0 ">
-                        <div id="btn-sidebar">
-                            <span class="text-white">&#9776;</span>
-                        </div>
-                    </div>
-                    <div class="col-8 px-0">
+                 <div class="">
+                <div class="row mt-5 mb-4">
+                    
+                    <div class="col-12 px-0 d-flex justify-content-center">
                         <img src="imagenes/banners/logo-uady-blanco.png" alt="Mountain View"
-                            class="d-none d-xl-block d-lg-block d-md-block img-fluid w-75">
+                            class="d-none d-xl-block d-lg-block d-md-block img-fluid w-50">
                     </div>
                 </div>
                 <ul>
@@ -108,11 +109,23 @@ foreach ($_SESSION['carrito'] as $producto) {
                     </div>
                 </div>
                              
-                <div class="row fondo">
-                    <div class="col-12 d-flex justify-content-center align-items-center fondoProductos">
-                        <h4 class="text-white my-2 fuenteTitulo" id="titulo">Productos Escolares</h4>
-                    </div>
-                </div>
+               <div class="row fondo">
+               
+               <div class="col-12 d-flex justify-content-start align-items-center fondoProductos">
+                 
+                 <div id="btn-sidebar">
+                   <span class="text-white">&#9776;</span>
+                 </div>
+                 
+                 
+                 <h4 class="text-white my-2 fuenteTitulo mx-auto" id="titulo">Productos Escolares</h4>
+               
+               </div>
+              
+              </div>
+
+
+
                  <div class="mb-5">
                  <!-- productos aquí -->
                 
@@ -156,6 +169,7 @@ foreach ($_SESSION['carrito'] as $producto) {
             </div>
         </div>
     </div>
+    <script src="assets/sidebar.js"></script>
 </body>
 
 </html>

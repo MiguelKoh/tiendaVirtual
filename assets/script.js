@@ -5,6 +5,8 @@ const tamano = document.getElementById("idTamano");
 const btnGuardar = document.getElementById("enviar");
 const cantidad = document.getElementById("cantidad");
 
+
+
 const obtenerImagenMedidas = async (id) => {
    
    try {
