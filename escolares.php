@@ -89,10 +89,10 @@ foreach ($_SESSION['carrito'] as $producto) {
                                 
                                 <div class="card-body">
                                     <a href="pagina_detalle.php?id=<?= $producto["id"]?>">
-                                       <h5 class="card-title"><?= $producto["nombre"] ?></h5>
+                                       <h5><?= $producto["nombre"] ?></h5>
                                    </a>
                                     
-                                    <p class="card-text"><?="$ ",$producto["precio"] ?></p>
+                                    <p class="h6 my-3"><?="$ ",$producto["precio"] ?></p>
                                     <p class="mb-0">
                                       <span class="font-weight-bold">Tallas:</span> 
                                       <?= $producto["tallas"] ?>

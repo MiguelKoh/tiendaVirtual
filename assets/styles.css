@@ -3,20 +3,10 @@ html, body {
   }
 
 /**************** Ocultar sidebar ******************/
-.hide-sidebar {
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-out;
-}
 
 
 
 /**************** fin ocultar sidebar ******************/
-
-
-
-
-
-
 
 
 .title-Product-cart{

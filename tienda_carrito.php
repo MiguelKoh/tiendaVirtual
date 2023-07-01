@@ -102,7 +102,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                               <td class="col-lg-6 col-sm-5">
                                <div class="row">
                                  <div class="col-lg-6 col-sm-8">
-                                  <h5 class="mb-1 mt-2 title-Product-cart mb-3"><?=  $producto['nombre']?></h5>
+                                  <h5 class="mb-1 mt-2 mb-3"><?=  $producto['nombre']?></h5>
                                  <p class="mb-1"><span class="font-weight-500">Talla: </span><?= $producto['tamano'] ?></p>
                                  <a class="delete-item font-weight-500" href="#">Eliminar</a>
                                  </div>
@@ -167,8 +167,9 @@ foreach ($_SESSION['carrito'] as $producto) {
             </div>
         </div>
     </div>
-  <script src="assets/sidebar.js"></script>
+  
   <script src="assets/jquery-3.1.1.min.js"></script>
+  <script src="assets/sidebar.js"></script>
   <script src="assets/carrito.js"></script>
 
 </body>

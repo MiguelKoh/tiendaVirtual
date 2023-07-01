@@ -23,4 +23,3 @@ const ocultarSidebar = () => {
   };
   
   document.addEventListener("DOMContentLoaded", ocultarSidebar);
-  
