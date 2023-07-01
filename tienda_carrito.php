@@ -43,7 +43,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                 include("sidebar.php");
                  ?>
 
-                <!-- Fin del contenido del sidebar -->
+            <!-- Fin del contenido del sidebar -->
 
 
             <div class="col-lg-10 col-md-10 col-sm-12" id="contenido">
@@ -62,7 +62,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                 </div>
                  
 
-                 <!-- producto aquí -->
+                 
                  
             
              
@@ -158,7 +158,7 @@ foreach ($_SESSION['carrito'] as $producto) {
 
                     </div>
                 </div>      
-                 <!-- producto aquí -->
+                 
 
             </div>
         </div>
