@@ -38,11 +38,10 @@ foreach ($_SESSION['carrito'] as $producto) {
     <div class="container-fluid h-100">
         <div class="row" id="desplazar">
            
-           <!-- Inicio del sidebar aquí -->
+           <!-- Inicio del sidebar -->
             <?php
             include("sidebar.php");
             ?>
-
             <!-- Fin del sidebar -->
 
             <div class="col-lg-10 col-md-10 col-sm-12" id="contenido">

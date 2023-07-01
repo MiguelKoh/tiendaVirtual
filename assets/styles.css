@@ -2,8 +2,18 @@ html, body {
     height: 100%;
   }
 
+.underline{
+ text-decoration: underline;
+}
+
 .delete-item{
     color:#007195;
+    width: 0;
+}
+
+.delete-item:hover{
+   cursor: pointer;
+   text-decoration: underline;
 }
 
 
