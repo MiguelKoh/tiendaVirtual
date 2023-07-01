@@ -84,11 +84,11 @@ foreach ($_SESSION['carrito'] as $producto) {
                             <div class="card" style="width: 16rem;">
                                 
                                 <div class="d-flex justify-content-center mt-3">
-                                    <img class="w-50" src="imagenes/productos/<?= $producto["rutaimagen"] ?>" alt="Card image cap">
+                                    <img class="w-50" src="imagenes/productos/<?= $producto["rutaimagen"] ?>" loading="lazy" alt="Card image cap">
                                 </div>
                                 
                                 <div class="card-body">
-                                    <a href="pagina_detalle.php?id=<?= $producto["id"]?>">
+                                    <a href="pagina_producto.php?id=<?= $producto["id"]?>">
                                        <h5><?= $producto["nombre"] ?></h5>
                                    </a>
                                     

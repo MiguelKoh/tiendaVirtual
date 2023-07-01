@@ -14,7 +14,7 @@
                   <li>Escolares</li>
               </a>
               
-              <a href="deportivos.php" class="link">
+              <a href="seleccionados.php" class="link">
                 <li>Seleccionados</li>
               </a>
 

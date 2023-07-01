@@ -12,10 +12,9 @@ const obtenerImagenMedidas = async (id) => {
    try {
     let imagen = '';
     const imagenContainer = document.getElementById("medidas"); 
-    const rutaImagen = await fetch(`./obtenerImagenMedidas.php?idTamano=${id}`);
+    const rutaImagen = await fetch(`./archivosAjax/obtenerImagenMedidas.php?idTamano=${id}`);
     const respuestaRutaImagen = await rutaImagen.json();
     imagen = `<img class="w-85" src="imagenes/productos/${respuestaRutaImagen[0].rutaImagen}" alt="Talla no disponible">`
-    /*console.log(imagen);*/
     imagenContainer.innerHTML = imagen;
 
   } catch(error){
@@ -47,7 +46,7 @@ const enviarDatos = async (idTamanos, cantidad) => {
   data.append('cantidad', cantidad);
 
   try {
-    const respuesta = await fetch('./tienda_agregar_carrito.php', {
+    const respuesta = await fetch('./archivosAjax/tienda_agregar_carrito.php', {
       method: 'POST',
       body: data
     });

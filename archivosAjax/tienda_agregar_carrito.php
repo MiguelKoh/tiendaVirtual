@@ -1,6 +1,6 @@
 <?php
 
-include("conexion.php");
+include("../conexion.php");
 session_start();
 $cn = ConectaBD();
 $id = isset($_POST['idTamano']) ? $_POST['idTamano'] : "";

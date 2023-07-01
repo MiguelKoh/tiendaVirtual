@@ -4,7 +4,7 @@ const changeCounter = async ()=>{
  
  try {
     const counter = document.getElementById("counter");
-    const respuesta = await fetch("./mostrar_total_carrito.php");
+    const respuesta = await fetch("./archivosAjax/mostrar_total_carrito.php");
     const data = await respuesta.json();
     counter.innerHTML = data[0].cantidadTotalCarrito;
     return parseInt(counter.innerHTML);
@@ -68,7 +68,7 @@ function bindQuantityInputChangeListener(quantityInput) {
             event.preventDefault();
             var parentTR = $(this).closest('tr');
             $.ajax({
-                url: './tienda_eliminar_producto.php',
+                url: './archivosAjax/tienda_eliminar_producto.php',
                 method: 'post',
                 data: {id: parentTR.attr('id')},
                 success: function (result) {
@@ -95,7 +95,7 @@ function bindQuantityInputChangeListener(quantityInput) {
             if (isPositiveInteger(quantityInput.val())) {
                 productPrize = updateButton.closest('td').siblings().find('.precio-producto');
                 $.ajax({
-                    url: 'tienda_cambiar_cantidad.php',
+                    url: './archivosAjax/tienda_cambiar_cantidad.php',
                     method: 'POST',
                     dataType: 'json',
                     data: {
