@@ -37,54 +37,12 @@ foreach ($_SESSION['carrito'] as $producto) {
 <body class="fondo">
     <div class="container-fluid h-100">
         <div class="row h-100">
-            <div class="col-lg-2 col-md-2 col-sm-12 fondoSidebar h-lg-100 h-sm-50" id="sidebar">
-                <!-- Contenido del sidebar aquí -->
-                <div class="row my-5">
-                    <div class="col-4 d-flex justify-content-center align-items-center px-0 ">
-                        <div id="btn-sidebar">
-                            <span class="text-white">&#9776;</span>
-                        </div>
-                    </div>
-                    <div class="col-8 px-0">
-                        <img src="imagenes/banners/logo-uady-blanco.png" alt="Mountain View"
-                            class="d-none d-xl-block d-lg-block d-md-block img-fluid w-75">
-                    </div>
-                </div>
-                <ul>
-                
-                <a href="escolares.php"><li>Escolares</li></a>
-                <a href="deportivos.php"><li>Deportivos</li></a>
-                
-                <a href="tienda_carrito.php" class="link">
-                    <li>
-                        <div>
-                           
-                           <div>
-                            
-                            <span><i class="fas fa-shopping-cart"></i></span>
-                            <span>Mi carrito</span>
-                            <span class="badge badge-pill badge-light" id="counter"><?= $cantidadProductos?></span>
-                          
-                          </div>
-                        
-                        </div>
-                    </li>
-                </a>
-
-                    <li>
-                        <div>
-                            <div>
-                                <span><i class="fas fa-sign-out-alt" aria-hidden="true"></i></span>
-                                <span>Salir</span>
-                            </div>
-                
-                        </div>
-                    </li>
-                </ul>
             
-            </div>
-
-                <!-- Fin del contenido del sidebar -->
+            <!-- Inicio del sidebar -->
+                <?php
+                include("sidebar.php");
+                ?>
+            <!-- Fin del sidebar -->
 
 
             <div class="col-lg-10 col-md-10 col-sm-12" id="contenido">
@@ -96,10 +54,11 @@ foreach ($_SESSION['carrito'] as $producto) {
                 </div>
                              
                 <div class="row fondo">
-                    <div class="col-12 d-flex justify-content-center align-items-center fondoProductos">
-                        <h4 class="text-white my-2 fuenteTitulo" id="titulo">Producto</h4>
-                    </div>
-                </div>
+                   <div class="col-12 d-flex justify-content-start align-items-center fondoProductos">
+                      <div id="btn-sidebar"> <span class="text-white">&#9776;</span></div>
+                      <h4 class="text-white my-2 fuenteTitulo mx-auto" id="titulo">Producto</h4>
+                   </div>  
+               </div>
                  <!-- producto aquí -->
                  
                  <?php
@@ -182,6 +141,7 @@ foreach ($_SESSION['carrito'] as $producto) {
             </div>
         </div>
     </div>
+  <script src="assets/sidebar.js"></script>
   <script src="assets/script.js"></script>
 </body>
 

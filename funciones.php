@@ -66,7 +66,7 @@ $productos[] = array(
 }//fin de la funcion
 
 
-function obtenerProductoEscolar(){
+function obtenerProductosEscolares(){
 $query = "SELECT * FROM productos_almacen WHERE id NOT IN(9,10,13,14,15) AND tipo=1";
 $productoEscolar = obtenerProductos($query);
 
