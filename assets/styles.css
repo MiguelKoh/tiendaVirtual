@@ -2,11 +2,10 @@ html, body {
     height: 100%;
   }
 
-/**************** Ocultar sidebar ******************/
+.delete-item{
+    color:#007195;
+}
 
-
-
-/**************** fin ocultar sidebar ******************/
 
 
 .title-Product-cart{

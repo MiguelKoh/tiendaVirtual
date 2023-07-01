@@ -103,7 +103,9 @@ foreach ($_SESSION['carrito'] as $producto) {
                                  <div class="col-lg-7 col-sm-8">
                                   <h5 class="mb-1 mt-2 mb-3 ml-3"><?=  $producto['nombre']?></h5>
                                  <p class="mb-1"><span class="font-weight-500 ml-3">Talla: </span><?= $producto['tamano'] ?></p>
-                                 <a class="delete-item font-weight-500 ml-3" href="#">Eliminar</a>
+                                 
+                               <a class="delete-item font-weight-500 ml-3" href="#">Eliminar</a>
+                                 
                                  </div>
                                  <div class="col-lg-5  col-sm-4 d-flex align-items-center">
                                    <img src="imagenes/productos/<?= $producto['rutaImagen'] ?>" class="w-50" alt="">
