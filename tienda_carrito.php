@@ -38,12 +38,12 @@ foreach ($_SESSION['carrito'] as $producto) {
     <div class="container-fluid h-100">
         <div class="row h-100">
             
-            <!-- Inicio del del sidebar -->
+            <!-- Inicio del sidebar -->
                  <?php
-                include("sidebar.php");
+                include("archivosAjax/sidebar.php");
                  ?>
 
-            <!-- Fin del contenido del sidebar -->
+            <!-- Fin del sidebar -->
 
 
             <div class="col-lg-10 col-md-10 col-sm-12" id="contenido">

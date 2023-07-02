@@ -40,7 +40,7 @@ foreach ($_SESSION['carrito'] as $producto) {
            
            <!-- Inicio del sidebar -->
             <?php
-            include("sidebar.php");
+            include("archivosAjax/sidebar.php");
             ?>
             <!-- Fin del sidebar -->
 

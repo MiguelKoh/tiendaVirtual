@@ -14,6 +14,8 @@ foreach ($_SESSION['carrito'] as $producto) {
     $cantidadProductos += $producto['cantidad'];
 }
 
+ $producto = obtenerProducto($productoID);
+
 
 ?>
 
@@ -28,7 +30,7 @@ foreach ($_SESSION['carrito'] as $producto) {
       <link rel="stylesheet" href="assets/styles.css" type="text/css" />
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="assets/bootstrap.min.css">
-      <title>Tienda virtual - Producto</title>
+      <title><?= $producto[0]["nombre"] ?></title>
       <link rel="shortcut icon" type="image/x-icon" href="imagenes/banners/favicon_uady.ico">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
           integrity="sha512-************" crossorigin="anonymous" />
@@ -40,12 +42,9 @@ foreach ($_SESSION['carrito'] as $producto) {
             
             <!-- Inicio del sidebar -->
                 <?php
-                include("sidebar.php");
+                include("archivosAjax/sidebar.php");
                 ?>
             <!-- Fin del sidebar -->
-
-
-            
 
             <div class="col-lg-10 col-md-10 col-sm-12" id="contenido">
                 <!-- Contenido principal aquí -->
@@ -67,11 +66,10 @@ foreach ($_SESSION['carrito'] as $producto) {
 
 
 
-                 <!-- producto aquí -->
+                <!-- Inicio producto-->
                  
                  <?php
                 
-                $producto = obtenerProducto($productoID);
                 $tamanos = ''; 
                 
                 //Guardar las tallas 
@@ -124,7 +122,12 @@ foreach ($_SESSION['carrito'] as $producto) {
                                   
 
                                   <div class="mb-5">
-                                      <input class="btn btn-primary" id="enviar" type="submit" value="Agregar a mi carrito">
+                                   
+                                     <button class="btn btn-primary" id="enviar" type="submit">
+                                       <i class="fas fa-shopping-cart fa-sm"></i> Agregar a mi carrito 
+                                     </button>
+
+                                     
                                   </div>
                               
                               </form>
@@ -159,7 +162,7 @@ foreach ($_SESSION['carrito'] as $producto) {
 
 
                 </div>
-                 <!-- producto aquí -->
+                 <!-- producto Fin -->
 
             </div>
         </div>
