@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-$id = $_POST["id"];
+$id =$_POST["id"];
+  
 unset($_SESSION['carrito'][$id]);
 
 if (count($_SESSION['carrito']) > 0) {
@@ -14,6 +15,11 @@ if (count($_SESSION['carrito']) > 0) {
 
     echo '$' . number_format($precioTotal, 2);
 }
+
+
+
+
+
 
 
 

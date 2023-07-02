@@ -1,6 +1,6 @@
 <?php 
 include("funciones.php");
-session_start();
+include("validate.php");
 $productoID = $_GET["id"];
 //print_r(obtenerProducto($productoID));
 

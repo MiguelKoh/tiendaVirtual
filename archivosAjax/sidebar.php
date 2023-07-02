@@ -31,17 +31,25 @@
                 </li>
             </a>
             
-            
             <li>
-                <div>
-                    <div>
-                        <span><i class="fas fa-sign-out-alt" aria-hidden="true"></i></span>
-                        <span>Salir</span>
-                    </div>
-                </div>
-            </li>
-        
+                <p class="mb-0">ALUMNO: <span class="font-weight-normal"><?= $nombre_completo_alumno ?></span></p>
 
+            </li>
+
+            
+            <a href="salir.php" class="link">
+                <li>
+                    <div>
+                        <div>
+                            <span><i class="fas fa-sign-out-alt" aria-hidden="true"></i></span>
+                            <span>Salir</span>
+                        </div>
+                    </div>
+                </li>
+            </a>
+
+
+        
         </ul>
 
     </div>
