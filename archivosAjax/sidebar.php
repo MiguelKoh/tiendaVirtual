@@ -10,6 +10,13 @@
         </div>
         
         <ul>
+
+            <li>
+                <p class="mb-0">ALUMNO: <span class="font-weight-normal"><?= $nombre_completo_alumno ?></span></p>
+
+            </li>
+
+
               <a href="escolares.php" class="link">
                   <li>Escolares</li>
               </a>
@@ -31,11 +38,6 @@
                 </li>
             </a>
             
-            <li>
-                <p class="mb-0">ALUMNO: <span class="font-weight-normal"><?= $nombre_completo_alumno ?></span></p>
-
-            </li>
-
             
             <a href="salir.php" class="link">
                 <li>
