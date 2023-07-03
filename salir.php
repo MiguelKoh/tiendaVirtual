@@ -1,5 +1,4 @@
 <?php 
-
 session_start();
 unset ( $_SESSION['idUsuario'] );
 unset ( $_SESSION['idALumno'] );

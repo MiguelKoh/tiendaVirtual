@@ -113,13 +113,14 @@ class PDFTable extends FPDF
         return $nl;
     }
 
+    
     function Header()
     {
         $this->SetFont('Arial', 'B', 7);
         $this->Cell(100, -10, utf8_decode('Sistema de Control de Cargas Académicas de la Preparatoria 2 UADY'), 0, 0, 'C');
         $this->Cell(0, -10, $this->headerURL, 0, 0, 'C');
-        $ruta = rutaimagenes("images");
-       $this->Image($ruta."uadyblanco.jpg",18,8,55);
+        //$ruta = rutaimagenes("images");
+       //$this->Image($ruta."uadyblanco.jpg",18,8,55);
        $this->SetFont('Arial','B',10);
        $this->Cell(0,8,'ESCUELA PREPARATORIA DOS',10,25,0);
         $this->SetFont('Arial', 'B', 8);

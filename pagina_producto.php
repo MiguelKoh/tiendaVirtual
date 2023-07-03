@@ -14,10 +14,12 @@ foreach ($_SESSION['carrito'] as $producto) {
     $cantidadProductos += $producto['cantidad'];
 }
 
- $producto = obtenerProducto($productoID);
-
-
+ 
 ?>
+
+<?php $producto = obtenerProducto($productoID);  ?>
+
+<?php if (!empty($producto)) { ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -172,3 +174,9 @@ foreach ($_SESSION['carrito'] as $producto) {
 </body>
 
 </html>
+
+<?php } else {
+ 
+ include("archivosAjax/paginaNoEncontrada.php");
+
+} ?>

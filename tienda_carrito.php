@@ -1,5 +1,4 @@
 <?php
-include("funciones.php");
 include("validate.php");
 
 // Verifica si el arreglo 'carrito' no está definido y lo crea si es necesario
@@ -15,6 +14,7 @@ foreach ($_SESSION['carrito'] as $producto) {
 }
 //print_r($_SESSION['carrito']);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

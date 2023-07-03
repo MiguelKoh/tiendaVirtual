@@ -1,5 +1,4 @@
 
-const btnCarrito = document.getElementById("carrito");
 const tallas = document.querySelectorAll('.talla');
 const tamano = document.getElementById("idTamano");
 const btnGuardar = document.getElementById("enviar");
