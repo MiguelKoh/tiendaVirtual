@@ -1,12 +1,16 @@
+
+
+
 const ocultarSidebar = () => {
+    
     const btnSidebar = document.getElementById("btn-sidebar");
     const sidebar = document.getElementById("sidebar");
     const contenido = document.getElementById("contenido");
   
-    let sidebarVisible = true; // Variable para rastrear la visibilidad actual de la barra lateral
+    let sidebarVisible = true;
   
     btnSidebar.addEventListener("click", () => {
-      sidebarVisible = !sidebarVisible; // Cambiar la visibilidad actual de la barra lateral
+      sidebarVisible = !sidebarVisible;
   
       if (sidebarVisible) {
         // Mostrar la barra lateral

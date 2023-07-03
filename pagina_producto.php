@@ -5,19 +5,32 @@ include("validate.php");
 $productoID = isset($_GET["id"]) ? $_GET["id"] : null;
 
 // Verifica si el arreglo 'carrito' no está definido y lo crea si es necesario
+
 if (!isset($_SESSION['carrito'])) {
     $_SESSION['carrito'] = array();
 }
 
+/* La variable $cantidadProductos esta insertada en un <li> del sidebar, el cual esta invocado desde 
+   archivosAjax/sidebar.php 
+*/
+
 $cantidadProductos = 0;
+
 foreach ($_SESSION['carrito'] as $producto) {
     $cantidadProductos += $producto['cantidad'];
-}
+
+}//fin del foreach
 
  
 ?>
 
 <?php 
+ 
+ /*
+   Validaciones en caso de que el usuario escriba en la barra de direcciones un id que no exista,
+   por ejemplo: "pagina_producto.php?id=10000" y tambien otra validacion por si no escribe el parametro id  y solamente escribe sin nada: "pagina_producto.php" en la barra de direcciones. En ambos casos se invoca la pagina "paginaNoEncontrada.php" ubicada en "archivosAjax/paginaNoEncontrada.php"
+*/
+
  $producto = null;
  
  if ($productoID !== null) {

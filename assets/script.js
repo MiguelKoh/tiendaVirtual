@@ -9,18 +9,19 @@ const cantidad = document.getElementById("cantidad");
 const obtenerImagenMedidas = async (id) => {
    
    try {
-    let imagen = '';
-    const imagenContainer = document.getElementById("medidas"); 
-    const rutaImagen = await fetch(`./archivosAjax/obtenerImagenMedidas.php?idTamano=${id}`);
-    const respuestaRutaImagen = await rutaImagen.json();
-    imagen = `<img class="w-85" src="imagenes/productos/${respuestaRutaImagen[0].rutaImagen}" alt="Talla no disponible">`
-    imagenContainer.innerHTML = imagen;
+     
+     let imagen = '';
+     const imagenContainer = document.getElementById("medidas"); 
+     const rutaImagen = await fetch(`./archivosAjax/obtenerImagenMedidas.php?idTamano=${id}`);
+     const respuestaRutaImagen = await rutaImagen.json();
+     imagen = `<img class="w-85" src="imagenes/productos/${respuestaRutaImagen[0].rutaImagen}" alt="Imagen no disponible">`
+     imagenContainer.innerHTML = imagen;
 
   } catch(error){
     console.log(error);
   }
 
-}//fin funcion
+}//fin obtenerImagenMedidas
 
 
   
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded",mostrarMedidas());
   
 
 const enviarDatos = async (idTamanos, cantidad) => {
+  
   const data = new FormData();
   data.append('idTamano', idTamanos);
   data.append('cantidad', cantidad);
@@ -65,7 +67,7 @@ const enviarDatos = async (idTamanos, cantidad) => {
 
 
 const resetFields = () => {
-  // Obtén todos los elementos de tipo radio con el nombre "opciones"
+
   const elementosRadio = document.getElementsByName("idTamanos");
   const cantidad = document.getElementById("cantidad");
 

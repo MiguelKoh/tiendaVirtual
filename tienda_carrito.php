@@ -6,13 +6,18 @@ if (!isset($_SESSION['carrito'])) {
     $_SESSION['carrito'] = array();
 }
 
+/* La variable $cantidadProductos esta insertada en un <li> del sidebar, el cual esta invocado desde 
+   archivosAjax/sidebar.php 
+*/
+
 $cantidadProductos = 0;
+
 foreach ($_SESSION['carrito'] as $producto) {
+    
     $cantidadProductos += $producto['cantidad'];
-    //print_r($producto);
-    //echo "<br>";
-}
-//print_r($_SESSION['carrito']);
+    
+}// fin del foreach
+
 ?>
 
 
