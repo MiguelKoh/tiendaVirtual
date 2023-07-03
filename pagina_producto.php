@@ -1,8 +1,8 @@
 <?php 
 include("funciones.php");
 include("validate.php");
-$productoID = $_GET["id"];
-//print_r(obtenerProducto($productoID));
+
+$productoID = isset($_GET["id"]) ? $_GET["id"] : null;
 
 // Verifica si el arreglo 'carrito' no está definido y lo crea si es necesario
 if (!isset($_SESSION['carrito'])) {
@@ -17,9 +17,20 @@ foreach ($_SESSION['carrito'] as $producto) {
  
 ?>
 
-<?php $producto = obtenerProducto($productoID);  ?>
+<?php 
+ $producto = null;
+ 
+ if ($productoID !== null) {
+    
+    $producto = obtenerProducto($productoID);
 
-<?php if (!empty($producto)) { ?>
+}//fin del if
+
+if (!empty($producto)) {
+
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -175,8 +186,14 @@ foreach ($_SESSION['carrito'] as $producto) {
 
 </html>
 
-<?php } else {
+<?php 
+ 
+ }//fin del if
+ 
+ else {
  
  include("archivosAjax/paginaNoEncontrada.php");
-
-} ?>
+  
+  }
+  
+ ?>

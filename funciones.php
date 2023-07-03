@@ -86,7 +86,7 @@ return $productoDeportivo;
 
 
 
-function obtenerProducto($productoID){
+function obtenerProducto($productoID) {
     
     $cn = ConectaBD();
     if (!$cn) {
@@ -100,9 +100,9 @@ function obtenerProducto($productoID){
     
     $resultadoProducto = mysqli_query($cn, $consultaProducto);
     
-    if (!$resultadoProducto) {
-      die('Consulta fallida');
-    }
+    if (mysqli_num_rows($resultadoProducto) > 0) {
+      
+    
     
     while ($producto = mysqli_fetch_array($resultadoProducto)) {
         
@@ -156,7 +156,14 @@ function obtenerProducto($productoID){
    DesconectaBD($cn);
    
    return $producto;
-   
+
+    }//fin del if
+    
+    else {
+
+        DesconectaBD($cn);
+        return null;
+    }
 
 }//fin de funcion
 
