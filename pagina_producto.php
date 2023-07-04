@@ -119,7 +119,7 @@ if (!empty($producto)) {
                <div class="row bg-light h-75 w-80 m-5 rounded">
                         
                     <div class="col-lg-3 col-sm-12 d-flex justify-content-center align-items-center">
-                        <img class="w-lg-75 w-sm-50 w-md-50 mt-sm-5-c" src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="Card image cap">
+                        <img class="w-lg-75 w-sm-50 mt-sm-5-c" src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="Card image cap">
                    </div>
                         
                     <div class="col-lg-4 col-sm-12 mt-5 px-0">

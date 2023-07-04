@@ -229,6 +229,12 @@ th {
     width: 85%;
 }
 
+@media (max-width: 768px) { 
+.w-sm-50 {
+        width: 50% !important;
+    }
+
+}
 
 @media (max-width: 575.98px) {
 
@@ -240,9 +246,7 @@ th {
         height: 50% !important;
     }
 
-    .w-sm-50 {
-        width: 50% !important;
-    }
+    
 
     .mb-sm-4-custom {
         margin-bottom: 1.5rem !important;
@@ -306,11 +310,12 @@ th {
  */
 
 
-
+@media (min-width: 992px) {  
 .w-lg-75 {
     width: 75%;
 }
 
+}
 
 
 .w-lg-13 {
