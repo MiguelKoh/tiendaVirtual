@@ -15,7 +15,7 @@
                 <li>
                     <div>
                         <div>
-                            <span><i class="fas fa-user"></i></span>
+                            <span class="mr-1"><i class="fas fa-user"></i></span>
                             <span><?= $nombre_completo_alumno ?></span>
                         </div>
                     </div>

@@ -53,6 +53,9 @@ $alumno = mysqli_fetch_array($queryAlumno);
 $matricula = htmlentities($alumno['matricula']);
 $nombre = $alumno['apPaterno'] . " " . $alumno['apMaterno'] . " " . $alumno['nombres'];
 
+echo $nombre;
+print_r($_SESSION['carrito']);
+
 // TÍTULO
 $pdf->AddPage();
 $pdf->SetFont('Arial', 'B', 10);
@@ -152,6 +155,8 @@ foreach ($_SESSION['carrito'] as $producto) {
 
     $pdf->Cell(35, 5, $referencia, 1, 1, 'C');
 }
+ 
+
 $pdf->Cell(15, 5, "", 0, 0, 'C');
 $pdf->Cell(105, 5, utf8_decode("Importe Total"), 1, 0, 'R');
 $pdf->Cell(55, 5, utf8_decode('$' . number_format($precioTotal, 2)), 1, 1, 'L');

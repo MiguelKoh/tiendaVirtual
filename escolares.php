@@ -1,6 +1,7 @@
 <?php
 include("funciones.php");
 include("validate.php");
+//include("../validate.php");
 
 // Verifica si el arreglo 'carrito' no está definido y lo crea si es necesario
 if (!isset($_SESSION['carrito'])) {
