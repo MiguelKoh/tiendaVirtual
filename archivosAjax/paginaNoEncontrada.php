@@ -29,8 +29,7 @@ foreach ($_SESSION['carrito'] as $producto) {
     <link rel="stylesheet" href="assets/bootstrap.min.css">
     <title>Tienda virtual</title>
     <link rel="shortcut icon" type="image/x-icon" href="imagenes/banners/favicon_uady.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-        integrity="sha512-************" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/fontawesome-free-5.15.2-web/css/all.min.css">
 
 </head>
 

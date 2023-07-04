@@ -292,7 +292,19 @@ th {
 
 }
 
-/*fin media query sm*/
+/*fin media queries sm*/
+
+/*@media (max-width: 768px) { 
+
+ .w-md-50{
+    width: 50%;
+ }
+ 
+
+ }/*fin de media queries md
+
+ */
+
 
 
 .w-lg-75 {
