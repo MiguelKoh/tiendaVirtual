@@ -11,10 +11,15 @@
         
         <ul>
 
-            <li>
-                <p class="mb-0">ALUMNO: <span class="font-weight-normal"><?= $nombre_completo_alumno ?></span></p>
-
-            </li>
+            
+                <li>
+                    <div>
+                        <div>
+                            <span><i class="fas fa-user"></i></span>
+                            <span><?= $nombre_completo_alumno ?></span>
+                        </div>
+                    </div>
+                </li>
 
 
               <a href="escolares.php" class="link">

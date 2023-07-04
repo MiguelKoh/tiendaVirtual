@@ -59,9 +59,9 @@ body {
         
     }
 
-}
+}/*fin de @media*/
 
-/*fin de @media*/
+
 
 
 
@@ -296,26 +296,13 @@ th {
 
 }
 
-/*fin media queries sm*/
-
-/*@media (max-width: 768px) { 
-
- .w-md-50{
-    width: 50%;
- }
- 
-
- }/*fin de media queries md
-
- */
-
 
 @media (min-width: 992px) {  
 .w-lg-75 {
     width: 75%;
 }
 
-}
+}/*fin de media querie*/
 
 
 .w-lg-13 {
