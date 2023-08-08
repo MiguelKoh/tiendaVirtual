@@ -62,7 +62,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                       <div id="btn-sidebar"> <span class="text-white">&#9776;</span></div>
                       <h3 class="text-white my-2 mx-auto" id="titulo">Productos selección deportiva</h3>
                    </div>  
-                   <div class="col-11 mt-4">
+                   <div class="col-11 mt-4 px-0">
                    
                     <div id="accordion">
                       <div class="card">
@@ -104,7 +104,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                                 <div class="d-flex justify-content-center mt-3"><img class="w-50" src="imagenes/productos/<?= $producto["rutaimagen"] ?>" loading="lazy" alt="Card image cap"></div>
                                 <div class="card-body">
                                 <a href="pagina_producto.php?id=<?= $producto["id"]?>"><h5 class="card-title" style="cursor:pointer;"><?= $producto["nombre"] ?></h5></a>
-                                    <p class="card-text"><?="$ ",$producto["precio"] ?></p>
+                                    <p class="h6 my-3"><?="$ ",$producto["precio"] ?></p>
                                     <p class="mb-0"><span class="font-weight-bold">Tallas:</span> <?= $producto["tallas"] ?></p>
                                 </div>
                             </div>

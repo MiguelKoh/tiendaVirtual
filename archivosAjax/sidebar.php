@@ -14,22 +14,23 @@
                 <li>
                     <div>
                         <div>
-                            <span><i class="fas fa-user"></i></span>
+                            <span  class="mr-1"><i class="fas fa-user"></i></span>
                             <span><?= $nombre_completo_alumno ?></span>
                         </div>
                     </div>
                 </li>
 
-
+             <a href="https://drive.google.com/file/d/11gyVnC3-VzG-MpjS_JDkbm1yVtcuCeuk/view?fbclid=IwAR1gDBJBqhZ3X-N5H4sTiFYsaMVU0shDcpTzBhoghal2Wgeq4N5vdbhpdiI
+             "  target="_blank" class="link">
               <li>
                     <div>
                         <div>
-                            <span><i class="far fa-file-pdf"></i></span>
+                            <span  class="mr-1"><i class="far fa-file-pdf"></i></span>
                             <span>Tutorial de compra</span>
                         </div>
                     </div>
                 </li> 
-
+            </a>
 
               <a href="escolares.php" class="link">
                   <li>Escolares</li>
