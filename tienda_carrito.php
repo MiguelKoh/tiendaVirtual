@@ -145,7 +145,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                         </table>
                      <?php } else {?> 
                           
-                          <p class="my-4 mr-2 h6 vacio">Carrito vacio.</p> <a href="escolares.php" class="font-weight-500 underline"> Ir a tienda para agregar productos</a>
+                          <p class="my-4 mr-2 h6 vacio">Carrito vacío.</p> <a href="escolares.php" class="font-weight-500 underline"> Ir a tienda para agregar productos</a>
 
                          </div>
                         </div>

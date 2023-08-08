@@ -11,15 +11,24 @@
         
         <ul>
 
-            
                 <li>
                     <div>
                         <div>
-                            <span class="mr-1"><i class="fas fa-user"></i></span>
+                            <span><i class="fas fa-user"></i></span>
                             <span><?= $nombre_completo_alumno ?></span>
                         </div>
                     </div>
                 </li>
+
+
+              <li>
+                    <div>
+                        <div>
+                            <span><i class="far fa-file-pdf"></i></span>
+                            <span>Tutorial de compra</span>
+                        </div>
+                    </div>
+                </li> 
 
 
               <a href="escolares.php" class="link">

@@ -1,3 +1,5 @@
+<?php// include("../../logout.php")?>
+
 <?php 
 session_start();
 unset ( $_SESSION['idUsuario'] );

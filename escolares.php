@@ -86,7 +86,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                           
                           <?php } ?>
 
-                        <div class="col-lg-3 col-md-4 col-12 mt-5 d-flex justify-content-center"> 
+                        <div class="col-lg-3 col-md-4 col-12 mt-5 d-flex justify-content-center px-0"> 
                             <div class="card" style="width: 16rem;">
                                 
                                 <div class="d-flex justify-content-center mt-3">
