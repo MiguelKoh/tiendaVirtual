@@ -1,6 +1,9 @@
 <?php 
 include("funciones.php");
 include("validate.php");
+include("conexion.php");
+$cn = ConectaBD();
+//include("../validate.php");
 
 $productoID = isset($_GET["id"]) ? $_GET["id"] : null;
 
@@ -35,7 +38,7 @@ foreach ($_SESSION['carrito'] as $producto) {
  
  if ($productoID !== null) {
     
-    $producto = obtenerProducto($productoID);
+    $producto = obtenerProducto($cn,$productoID);
 
 }//fin del if
 
@@ -63,7 +66,7 @@ if (!empty($producto)) {
 
 <body class="fondo">
     <div class="container-fluid h-100">
-        <div class="row h-100">
+        <div class="row h-lg-100">
             
             <!-- Inicio del sidebar -->
                 <?php
@@ -112,12 +115,73 @@ if (!empty($producto)) {
                 }//fin de foreach
 
                 ?>
-            
+             
+             <?php if ($productoID ==11 || $productoID ==12) { ?>
+             
+             <div class="row d-flex justify-content-center">
+                    <div class="w-80  mt-4 px-0">
+                    
+                    <div class="col-12">
+                    <div class="bg-light rounded pb-2 pt-3 pl-3" role="alert">
+                     <p class="font-weight-bold mb-1">De preferencia solo compra este producto, si perteneces a alguno de los siguientes talleres:</p>
+    
+                    <?php if ($productoID == 11) { ?>
+                    <div class="row">
+                    <div class="col-2 pr-0">
+                      <ul class="mt-2">
+                        <li class="font-weight-normal">Folcklore</li>
+                        <li class="font-weight-normal">Sóftbol</li>
+                        <li class="font-weight-normal">Béisbol</li>
+                    </ul>
+                   </div>
+                   <div class="col-10 pl-0">
+                     <ul class="mt-2">
+                        <li class="font-weight-normal">Ajedrez</li>
+                        <li class="font-weight-normal">Karate</li>
+                        <li class="font-weight-normal">Banda de guerra</li>
+                    </ul>
+                       
+                   </div>
+
+                   </div>
+                 <?php } elseif ($productoID == 12) { ?>
+                  
+                  <div class="row">
+                 
+                 <div class="col-2 pr-0">
+                    <ul class="mt-2">
+                      <li class="font-weight-normal">Fútbol</li>
+                      <li class="font-weight-normal">Handball</li>
+                      <li class="font-weight-normal">Voleibol</li>
+                   </ul>
+                </div>
+
+                <div class="col-10 pl-0"> 
+                 
+                 <ul class="mt-2">
+                    <li class="font-weight-normal">Básquetbol</li>
+                 </ul>
+                
+                </div>
+
+               </div>
+                 
+                 <?php } ?>
+
+                </div>
+
+                </div>  
+                   </div>
+               
+               </div>
+                
+        <?php } ?>
 
                  <div class="d-flex justify-content-center">
-                    
-               <div class="row bg-light h-75 w-80 m-5 rounded">
-                        
+               
+               
+               <div class="row bg-light h-75 w-80 rounded <?php echo ($productoID == 11 || $productoID == 12) ? "m-4 mb-5" : "m-5"; ?>">
+
                     <div class="col-lg-3 col-sm-12 d-flex justify-content-center align-items-center">
                         <img class="w-lg-75 w-sm-50 mt-sm-5-c" src="imagenes/productos/<?= $producto[0]["rutaimagen"] ?>" alt="Card image cap">
                    </div>
@@ -169,9 +233,15 @@ if (!empty($producto)) {
 
             </div>
 
+
                 <div class="notificacion w-lg-13 h-25 row w-sm-35 bg-light rounded" id="notificacion">
-                     
-                     <div class="col-12">  
+                    
+                     <div class="col-12 mx-1">
+                        
+                        <button type="button" class="close mt-1 mb-3" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                       </button> 
+
                         <p class="notificacion__titulo d-flex justify-content-center mt-3 mb-0">Agregado al carrito</p>
                      </div>
                         
@@ -187,6 +257,8 @@ if (!empty($producto)) {
 
 
                 </div>
+
+
                  <!-- producto Fin -->
 
             </div>

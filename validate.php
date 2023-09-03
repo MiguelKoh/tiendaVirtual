@@ -1,4 +1,5 @@
 <?php
+/*include("../seccionAlumnos/validate.php");*/
 
 session_start();
    

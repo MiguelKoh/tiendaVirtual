@@ -17,9 +17,4 @@ function DesconectaBD($link) {
     mysqli_close($link);
 }
 
-
-
-
-
 ?>
-

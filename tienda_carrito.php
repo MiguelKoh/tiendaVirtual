@@ -40,7 +40,7 @@ foreach ($_SESSION['carrito'] as $producto) {
 
 <body class="fondo">
     <div class="container-fluid h-100">
-        <div class="row h-100">
+        <div class="row h-lg-100">
             
             <!-- Inicio del sidebar -->
                  <?php
@@ -77,7 +77,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                     <div class="row h-75 w-75 m-5">
                         
                         <div class="col-lg-12 mb-3 px-0">
-                         <a href="ficha_de_pago/tienda_ficha_pago.php" class="btn btn-secondary btn-ficha" id="generar-ficha">
+                         <a href="../seccionAlumnos/tienda_ficha_pago.php" class="btn btn-secondary btn-ficha" id="generar-ficha" target="_blank">
                          <i class="fas fa-file"></i>  Generar ficha de pago</a>   
                         </div>
                         

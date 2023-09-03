@@ -1,6 +1,6 @@
 
 
-<div class="col-lg-2 col-md-2 col-sm-12 fondoSidebar h-lg-100 h-sm-50" id="sidebar">
+<div class="col-lg-2 col-md-2 col-sm-12 fondoSidebar h-sm-50" id="sidebar">
     <div>
         <div class="row mt-5 mb-4">
             <div class="col-12 px-0 d-flex justify-content-center">
@@ -53,6 +53,15 @@
                 </li>
             </a>
             
+            <a href="https://siscap.uady.mx/siscap/seccionAlumnos/datos.php" class="link">
+                <li>
+                    <div>
+                        <div>
+                            <span>Ir a SISCAP</span>
+                        </div>
+                    </div>
+                </li>
+            </a>
             
             <a href="salir.php" class="link">
                 <li>

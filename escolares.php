@@ -1,6 +1,8 @@
 <?php
 include("funciones.php");
 include("validate.php");
+include("conexion.php");
+$cn = ConectaBD();
 //include("../validate.php");
 
 // Verifica si el arreglo 'carrito' no está definido y lo crea si es necesario
@@ -75,7 +77,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                 <?php 
                     
                     $contador = 0;
-                    $productos = obtenerProductosEscolares();
+                    $productos = obtenerProductosEscolares($cn);
 
                     foreach ($productos as $producto) {
                         $contador++;
@@ -86,12 +88,14 @@ foreach ($_SESSION['carrito'] as $producto) {
                           
                           <?php } ?>
 
-                        <div class="col-lg-3 col-md-4 col-12 mt-5 d-flex justify-content-center px-0"> 
+                        <div class="col-lg-3 col-md-4 col-12 mt-5 d-flex justify-content-center"> 
                             <div class="card" style="width: 16rem;">
                                 
-                                <div class="d-flex justify-content-center mt-3">
+                               
+                                    <a href="pagina_producto.php?id=<?= $producto["id"]?>" class="d-flex justify-content-center mt-3">
                                     <img class="w-50" src="imagenes/productos/<?= $producto["rutaimagen"] ?>" loading="lazy" alt="Card image cap">
-                                </div>
+                                    </a>
+                                
                                 
                                 <div class="card-body">
                                     <a href="pagina_producto.php?id=<?= $producto["id"]?>">

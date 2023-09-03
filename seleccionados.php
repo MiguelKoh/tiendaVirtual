@@ -1,6 +1,8 @@
 <?php
 include("funciones.php");
 include("validate.php");
+include("conexion.php");
+$cn = ConectaBD();
 //include("../validate.php");
 
 
@@ -89,7 +91,7 @@ foreach ($_SESSION['carrito'] as $producto) {
                  <!-- productos aquí -->
                     <?php 
                     $contador = 0;
-                    $productos = obtenerProductoDeportivo();
+                    $productos = obtenerProductoDeportivo($cn);
 
                     foreach ($productos as $producto) {
                         $contador++;
@@ -101,7 +103,9 @@ foreach ($_SESSION['carrito'] as $producto) {
                     ?>
                         <div class="col-lg-3 col-md-4 col-12 mt-5 d-flex justify-content-center"> 
                             <div class="card" style="width: 16rem;">
-                                <div class="d-flex justify-content-center mt-3"><img class="w-50" src="imagenes/productos/<?= $producto["rutaimagen"] ?>" loading="lazy" alt="Card image cap"></div>
+                                <a class="d-flex justify-content-center mt-3" href="pagina_producto.php?id=<?= $producto["id"]?>">
+                                    <img class="w-50" src="imagenes/productos/<?= $producto["rutaimagen"] ?>" loading="lazy" alt="Card image cap">
+                                </a>
                                 <div class="card-body">
                                 <a href="pagina_producto.php?id=<?= $producto["id"]?>"><h5 class="card-title" style="cursor:pointer;"><?= $producto["nombre"] ?></h5></a>
                                     <p class="h6 my-3"><?="$ ",$producto["precio"] ?></p>

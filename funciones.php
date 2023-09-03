@@ -1,9 +1,8 @@
 <?php
-include("conexion.php");
 
-function obtenerProductos($query){
+function obtenerProductos($cn,$query){
 
-$cn = ConectaBD();
+
 if (!$cn) {
 die('Error al conectarse a la base de datos');
 }
@@ -66,18 +65,18 @@ $productos[] = array(
 }//fin de la funcion
 
 
-function obtenerProductosEscolares(){
+function obtenerProductosEscolares($cn){
 $query = "SELECT * FROM productos_almacen WHERE id NOT IN(9,10,13,14,15) AND tipo=1";
-$productoEscolar = obtenerProductos($query);
+$productoEscolar = obtenerProductos($cn,$query);
 
 return $productoEscolar;
 
 }//fin de la funcion
 
 
-function obtenerProductoDeportivo(){
+function obtenerProductoDeportivo($cn){
 $query = "SELECT * FROM productos_almacen WHERE tipo=2";
-$productoDeportivo = obtenerProductos($query);
+$productoDeportivo = obtenerProductos($cn,$query);
 
 return $productoDeportivo;
 
@@ -86,9 +85,9 @@ return $productoDeportivo;
 
 
 
-function obtenerProducto($productoID) {
+function obtenerProducto($cn,$productoID) {
     
-    $cn = ConectaBD();
+
     if (!$cn) {
       die('Error al conectarse a la base de datos');
     }
@@ -166,8 +165,6 @@ function obtenerProducto($productoID) {
     }
 
 }//fin de funcion
-
-
 
 
 

@@ -115,10 +115,10 @@ form.addEventListener("submit", async (event) => {
   
     notificacion.classList.add("notificacion--active");
 
-    setTimeout(() => {
+    /*setTimeout(() => {
       notificacion.classList.remove("notificacion--active");
     }, 8000);
-
+*/
 
   }
 });
